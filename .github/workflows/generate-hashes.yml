@@ -6,6 +6,9 @@ on:
       - '**/*.hash'  # Prevent retriggering if only .hash files are pushed
   pull_request:
 
+permissions:
+  contents: write  # Grant write access to push changes
+
 jobs:
   generate-hashes:
     runs-on: ubuntu-latest
@@ -13,6 +16,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
 
       - name: Install dependencies
         run: sudo apt-get install -y gcc
@@ -28,10 +33,9 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add ./**/*.hash  # Ensure all .hash files are added recursively
+          git add ./**/*.hash
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "Auto-generate hash files [skip ci]"
             git push
-          fi
