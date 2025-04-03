@@ -1,8 +1,8 @@
 // Given a sequence s[0], ..., s[2n-1] finds the smallest linear recurrence
 // of size <= n compatible with s.
-vl BerlekampMassey(const vl &s, ll mod) {
+vi BerlekampMassey(const vi &s, ll mod) {
 	int n = sz(s), L = 0, m = 0;
-	vl C(n), B(n), T;
+	vi C(n), B(n), T;
 	C[0] = B[0] = 1;
 	ll b = 1;
 	REP(i, n) {
@@ -26,10 +26,10 @@ vl BerlekampMassey(const vl &s, ll mod) {
 // Input: A[0,...,n-1], C[0,...,n-1] satisfying
 //     A[i] = \sum_{j=1}^{n} C[j-1] A[i-j],
 // Outputs A[k]
-ll lin_rec(const vl &A, const vl &C, ll k, ll mod){
+ll lin_rec(const vi &A, const vi &C, ll k, ll mod){
 	int n = sz(A);
-	auto combine = [&](vl a, vl b) {
-		vl res(sz(a) + sz(b) - 1, 0);
+	auto combine = [&](vi a, vi b) {
+		vi res(sz(a) + sz(b) - 1, 0);
 		REP(i, sz(a)) REP(j, sz(b))
 			res[i+j] = (res[i+j] + a[i]*b[j]) % mod;
 		for (int i = 2*n; i > n; --i) REP(j,n)
@@ -37,7 +37,7 @@ ll lin_rec(const vl &A, const vl &C, ll k, ll mod){
 		res.resize(n + 1);
 		return res;
 	};
-	vl pol(n + 1), e(pol);
+	vi pol(n + 1), e(pol);
 	pol[0] = e[1] = 1;
 	for (++k; k; k /= 2) {
 		if (k % 2) pol = combine(pol, e);
