@@ -1,0 +1,7 @@
+- isOverflown testen
+- Zoek precisie uit van Numeric Integration
+- Voeg uitleg toe van Fast Hadamard Transform
+- Voeg wat standaard primitive roots toe
+- Probeer fast subset convolution
+- Zoek gnu order tree uit en maak duidelijkere code
+- Wat is een cartesian tree?
