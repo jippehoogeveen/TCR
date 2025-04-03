@@ -20,7 +20,8 @@
 \setminted{fontsize=\small, baselinestretch=0.9, breaklines, tabsize=2}
 % Referencing files:
 \newcommand{\mintedstyle}[2]{\inputminted{#1}{code/#2}}
-\newcommand{\code}[1]{\mintedstyle{cpp}{#1}}
+\newcommand{\code}[1]{ Hash: \input{code/#1.hash}
+\mintedstyle{cpp}{#1}}
 
 % --------------------------------------------------------------------------------
 % Multicolumn styling:
@@ -102,18 +103,18 @@
 %\end{center}
 \vfill\null \columnbreak
 
-\begin{center}
-\textbf{.bashrc}
-\end{center}
-\mintedstyle{bash}{.bashrc}
+%\begin{center}
+%\textbf{.bashrc}
+%\end{center}
+%\mintedstyle{bash}{.bashrc}
 
-\begin{center}
-\textbf{.vimrc}
-\end{center}
-\mintedstyle{vim}{.vimrc}
+%\begin{center}
+%\textbf{.vimrc}
+%\end{center}
+%\mintedstyle{vim}{.vimrc}
 
-\textbf{Test script} (usage: ./test.sh A/B/..)
-\mintedstyle{bash}{test.sh}
+%\textbf{Test script} (usage: ./test.sh A/B/..)
+%\mintedstyle{bash}{test.sh}
 % \inputminted[fontsize=\normalsize,baselinestretch=1,breaklines,tabsize=2]{bash}{code/test.sh}
 
 \begin{center}
@@ -1095,4 +1096,3 @@ Let $p_j$ be the time task $j$ takes on a machine, $d_j$ the deadline, $C_j$ the
 \end{multicols*}
 
 \end{document}
-
