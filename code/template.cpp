@@ -17,15 +17,6 @@ typedef vector<ii> vii;
 #define all(v) begin(v), end(v)
 #define sz(v) ((int) (v).size())
 #define rs resize
-#define DBG(x) cerr << __LINE__ << ": " \
-		<< #x<< " = " << (x) << endl
-
-template<class T> ostream& operator<<(ostream &os,
-		const vector<T> &v) {
-	os << "\n[";
-	for(const T &x : v) os << x << ',';
-	return os << "]\n";
-}
 
 namespace std { template<class T1, class T2>
 struct hash<pair<T1,T2>> { public:
