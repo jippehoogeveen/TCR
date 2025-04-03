@@ -3,11 +3,11 @@ name: Generate Hashes
 on:
   push:
     paths-ignore:
-      - '**/*.hash'  # Prevent retriggering if only .hash files are pushed
+      - '**/*.hash'
   pull_request:
 
 permissions:
-  contents: write  # Grant write access to push changes
+  contents: write
 
 jobs:
   generate-hashes:
@@ -17,15 +17,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}  # Use GitHub token for authentication
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
         run: sudo apt-get install -y gcc
 
-      - name: Generate hashes (Recursive)
+      - name: Generate hashes (Ignoring Includes)
         run: |
           find . -type f \( -name "*.cpp" -o -name "*.cc" \) | while read file; do
-            hash=$(gcc -E -P "$file" | md5sum | awk '{print substr($1, length($1)-5, 6)}')
+            hash=$(gcc -E -P -w -nostdinc "$file" 2>/dev/null | md5sum | awk '{print substr($1, length($1)-5, 6)}')
             echo "$hash" > "${file}.hash"
           done
 
