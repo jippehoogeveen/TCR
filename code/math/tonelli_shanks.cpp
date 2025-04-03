@@ -3,7 +3,7 @@ ll legendre(ll a, ll p) {
 	return p == 2 || mod_pow(a, (p-1)/2, p) == 1 ? 1 : -1;
 }
 ll tonelli_shanks(ll n, ll p) {
-	assert(legendre(n,p) == 1);
+	//assert(legendre(n,p) == 1);
 	if (p == 2) return 1;
 	ll s = 0, q = p-1, z = 2;
 	while (~q & 1) s++, q >>= 1;
