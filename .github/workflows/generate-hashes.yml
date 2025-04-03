@@ -25,7 +25,7 @@ jobs:
       - name: Generate hashes (Ignoring Includes)
         run: |
           find . -type f \( -name "*.cpp" -o -name "*.cc" \) | while read file; do
-            hash=$(gcc -E -P -w -nostdinc "$file" 2>/dev/null | md5sum | awk '{print substr($1, length($1)-5, 6)}')
+            hash=$(gcc -E -P -w -nostdinc "$file" 2>/dev/null  | awk '{gsub(/^[ \t]+/, ""); print}' | md5sum | awk '{print substr($1, length($1)-5, 6)}')
             echo "$hash" > "${file}.hash"
           done
 

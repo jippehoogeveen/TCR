@@ -1,1 +1,2 @@
-gcc -E -P -w -nostdinc file.cpp | md5sum | awk '{print substr($1, length($1)-5, 6)}'
+# Compare last 6 chars
+gcc -E -P -w -nostdinc file.cpp | awk '{gsub(/^[ \t]+/, ""); print}' | md5sum
