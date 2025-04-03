@@ -1,9 +1,5 @@
-int abs(int x) { return x > 0 ? x : -x; }
-int sign(int x) { return (x > 0) - (x < 0); }
+int sign(ll x) { return (x > 0) - (x < 0); }
 
-// greatest common divisor
-ll gcd(ll a,ll b){while(b)a%=b,swap(a,b);return a;};
-// least common multiple
 ll lcm(ll a, ll b) { return a/gcd(a, b)*b; }
 ll mod(ll a, ll b) { return (a%=b) < 0 ? a+b : a; }
 
