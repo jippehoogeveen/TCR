@@ -1,0 +1,37 @@
+name: Generate Hashes
+
+on:
+  push:
+    paths-ignore:
+      - '**/*.hash'  # Prevent retriggering if only .hash files are pushed
+  pull_request:
+
+jobs:
+  generate-hashes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: sudo apt-get install -y gcc
+
+      - name: Generate hashes (Recursive)
+        run: |
+          find . -type f \( -name "*.cpp" -o -name "*.cc" \) | while read file; do
+            hash=$(gcc -E -P "$file" | md5sum | awk '{print substr($1, length($1)-5, 6)}')
+            echo "$hash" > "${file}.hash"
+          done
+
+      - name: Commit and push hash files
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add ./**/*.hash  # Ensure all .hash files are added recursively
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto-generate hash files [skip ci]"
+            git push
+          fi
