@@ -26,7 +26,7 @@ struct HLD {
 			if (c != par[v] && c != hvy[v]) decomp(c, c);
 	}
 
-	// requires queryST(a, b) = max{A[i] | a≤i<b }.
+	// requires queryST(a, b) = max{A[i] | a<=i<b }.
 	int query(int a, int b) {
 		int res = 0;
 		for (; head[a] != head[b]; b = par[head[b]]) {
