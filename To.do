@@ -1,6 +1,7 @@
 - isOverflown testen (gedaan, kan alleen met add of mul of sub als functie)
 - Zoek precisie uit van Numeric Integration (gedaan, Simpson heeft een precisie van EPS^4 voor een vast interval en EPS^5 voor een interval van lengte EPS)
 - Voeg uitleg toe van Fast Hadamard Transform
+	(code verbeterd, waardoor je nu een simpele convolutiefunctie hebt (zoals bij FFT)).
 - Voeg wat standaard primitive roots toe 
 	10^9 + 7 : 5
 	10^9 + 9 : 13
