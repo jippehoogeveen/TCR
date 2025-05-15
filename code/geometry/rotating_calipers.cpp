@@ -4,7 +4,7 @@ NUM rotatingCalipers(vector<pt> &hull) {
 	while (((hull[1] - hull[0]) ^ (hull[(b + 1) % n] - hull[b])) > 0) b++;
 	NUM ret = 0.0;
 	while (a < n) {
-		ret = max(ret, lenSq(hull[a], hull[b]));
+		ret = max(ret, dist(hull[a], hull[b]));
 		if (((hull[(a + 1) % n] - hull[a % n]) ^ (hull[(b + 1) % n] - hull[b])) <= 0) a++;
 		else if (++b == n) b = 0;
 	}

@@ -1,11 +1,11 @@
-typedef vector<point> poly;
+typedef vector<pt> poly;
 
 // returns the perimeter: sum of Euclidean distances
 // of consecutive line segments (polygon edges)
 ld perimeter(const poly &P) {
   ld result = 0.0;
-  REP(i, sz(P)-1) // remember that P[0] = P[n-1]
-    result += dist(P[i], P[i+1]);
+  REP(i, sz(P)-1)
+    result += sqrt(dist(P[i], P[i+1]));
   return result; }
 
 // returns the area, which is half the determinant

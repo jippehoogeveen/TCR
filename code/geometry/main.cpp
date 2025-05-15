@@ -12,6 +12,11 @@ pt& operator-=(pt &p, pt q) { return p = p-q; }
 NUM operator*(pt p, pt q){ return p.x*q.x+p.y*q.y; }
 NUM operator^(pt p, pt q){ return p.x*q.y-p.y*q.x; }
 
+// square distance from p to q
+NUM dist(pt p, pt q){
+  return (q - p) * (q - p);
+ }
+
 // square distance from p to line ab
 ld distPtLineSq(pt p, pt a, pt b) {
 	p -= a; b -= a;
@@ -32,9 +37,10 @@ bool segmentHasPoint(pt p, pt a, pt b) {
 }
 
 // projects p onto the line ab
-pair<ld,ld> proj(pt p, pt a, pt b) {
+// NUM has to be ld
+pt proj(pt p, pt a, pt b) {
 	p -= a; b -= a;
-	return a + b*(ld(b*p) / (b*b));
+	return a + b*((b*p) / (b*b));
 }
 
 bool col(pt a, pt b, pt c) {
@@ -46,10 +52,11 @@ bool linesIntersect(pt a, pt b, pt c, pt d) {
 	return abs((a-b) ^ (c-d)) > EPS;
 }
 
-pair<ld,ld> lineLineIntersection(pt a, pt b, pt c, pt d) {
+// Check lines intersect!
+// NUM has to be ld
+pt lineLineIntersection(pt a, pt b, pt c, pt d) {
 	ld det = (a-b) ^ (c-d);
-	assert(abs(det) > EPS);
-	return ((c-d)*(a^b) - (a-b)*(c^d)) * (ld(1.0)/det);
+	return ((c-d)*(a^b) - (a-b)*(c^d)) * (1.0/det);
 }
 
 // dp, dq are directions from p, q

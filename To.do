@@ -12,6 +12,6 @@
 	(10^9 + 7)^2 : 5
 - Probeer fast subset convolution
 	Volgens mij wordt het b_i = \sum_{j & i = j} a_j in plaats van b_i = \sum_{j & i = i} a_j. Past rij a aan tot rij b. De inverse code maakt vervolgens van rij b weer rij a.
-- Zoek gnu order tree uit en maak duidelijkere code
-	De order set kan elementen toevoegen (insert) en verwijderen (erase). Vervolgens kan hij het i-de element teruggeven (find_by_order) en bepalen hoeveel elementen strikt kleiner zijn dan een gegeven element (order_of_key). De volgorde was van groot naar klein en die is omgedraaid. 
 - Wat is een cartesian tree?
+- Test Rotating Callipers
+- Bekijk Closest Points in detail
