@@ -13,22 +13,26 @@ NUM operator*(pt p, pt q){ return p.x*q.x+p.y*q.y; }
 NUM operator^(pt p, pt q){ return p.x*q.y-p.y*q.x; }
 
 // square distance from p to q
-NUM dist(pt p, pt q){
+NUM dist2(pt p, pt q){
   return (q - p) * (q - p);
  }
 
-// square distance from p to line ab
-ld distPtLineSq(pt p, pt a, pt b) {
+//Normal distance from p to q
+ld dist(pt p, pt q) { return sqrt(dist2(p,q)); }
+
+// distance from p to line ab
+ld distPtLine(pt p, pt a, pt b) {
 	p -= a; b -= a;
-	return ld(p^b) * (p^b) / (b*b);
+	return sqrt(ld(p^b) * (p^b) / (b*b));
 }
-// square distance from p to linesegment ab
-ld distPtSegmentSq(pt p, pt a, pt b) {
+
+// distance from p to linesegment ab
+ld distPtSegment(pt p, pt a, pt b) {
 	p -= a; b -= a;
 	NUM dot = p*b, len = b*b;
 	if (dot <= 0) return p*p;
 	if (dot >= len) return (p-b)*(p-b);
-	return p*p - ld(dot)*dot/len;
+	return sqrt(p*p - ld(dot)*dot/len);
 }
 // Test if p is on line segment ab
 bool segmentHasPoint(pt p, pt a, pt b) {
@@ -66,6 +70,7 @@ pt lineLineIntersection(pt a, pt b, pt c, pt d) {
 
 // dp, dq are directions from p, q
 // intersection at p + t_i dp, for 0 <= i < return value
+// NUM has to be ld
 int segmentIntersection(pt p, pt dp, pt q, pt dq,
 		pt &A, pt &B) {
 	if (abs(dp * dp)<EPS)

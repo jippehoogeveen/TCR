@@ -1,3 +1,4 @@
+const int maxn = 1000000;
 int n; pt pts[maxn];
 
 struct byY {

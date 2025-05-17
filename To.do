@@ -13,7 +13,7 @@
 - Probeer fast subset convolution
 	Volgens mij wordt het b_i = \sum_{j & i = j} a_j in plaats van b_i = \sum_{j & i = i} a_j. Past rij a aan tot rij b. De inverse code maakt vervolgens van rij b weer rij a.
 - Wat is een cartesian tree?
-- Test Rotating Callipers
 - Bekijk Closest Points in detail
+- Werk RMST en Delaunay bij naar compatibel met main code in geometry
 - Li-Chao tree toevoegen
 - in Polygon isConvex bijwerken voor meerdere punten op 1 lijn!

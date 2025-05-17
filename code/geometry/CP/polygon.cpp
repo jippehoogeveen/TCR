@@ -5,7 +5,7 @@ typedef vector<pt> poly;
 ld perimeter(const poly &P) {
 	ld result = 0.0;
 	REP(i, sz(P)-1)
-	  result += sqrt(dist(P[i], P[i+1]));
+	  result += dist(P[i], P[i+1]);
 	return result; }
 
 // Returns TWICE the area of a polygon (for integers)

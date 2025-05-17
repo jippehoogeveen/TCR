@@ -1,4 +1,4 @@
-ld perimeter(point a, point b, point c) {
+ld perimeter(pt a, pt b, pt c) {
   return dist(a, b) + dist(b, c) + dist(c, a); }
 
 ld area(ld ab, ld bc, ld ca) {
@@ -6,14 +6,14 @@ ld area(ld ab, ld bc, ld ca) {
   ld s = 0.5 * (ab+bc+ca);
   return sqrt(s)*sqrt(s-ab)*sqrt(s-bc)*sqrt(s-ca);
 }
-ld area(point a, point b, point c) {
+ld area(pt a, pt b, pt c) {
   return area(dist(a, b), dist(b, c), dist(c, a));
 }
 ld rInCircle(ld ab, ld bc, ld ca) {
   return area(ab,bc,ca)*2.0 / (ab+bc+ca);
 }
 
-ld rInCircle(point a, point b, point c) {
+ld rInCircle(pt a, pt b, pt c) {
   return rInCircle(dist(a,b),dist(b,c),dist(c,a));
 }
 // assumption: the required points/lines functions
@@ -21,29 +21,25 @@ ld rInCircle(point a, point b, point c) {
 // Returns if there is an inCircle center
 // if it returns TRUE, ctr will be the inCircle
 // center and r is the same as rInCircle
-int inCircle(point p1, point p2, point p3, point &ctr, ld &r) {
+bool inCircle(point p1, point p2, point p3, point &ctr, ld &r) {
   r = rInCircle(p1, p2, p3);
   if (fabs(r) < EPS) return false;
 
-  line l1, l2; // compute these two angle bisectors
   ld ratio = dist(p1, p2) / dist(p1, p3);
-  point p = translate(p2,
-    scale(toVec(p2, p3), ratio / (1 + ratio)));
-  pointsToLine(p1, p, l1);
+  pt q1 = p2 + (p3 - p2) * (ratio / (1 + ratio));
 
   ratio = dist(p2, p1) / dist(p2, p3);
-  p = translate(p1,
-    scale(toVec(p1, p3), ratio / (1 + ratio)));
-  pointsToLine(p2, p, l2);
+  pt q2 = p1 + (p3 - p1) * (ratio / (1 + ratio));
+
   // get their intersection point:
-  areIntersect(l1, l2, ctr);
+  ctr = lineLineIntersection(p1, q1, p2, q2);
   return true;
 }
 
 ld rCircumCircle(ld ab, ld bc, ld ca) {
   return ab * bc * ca / (4.0 * area(ab, bc, ca)); }
 
-ld rCircumCircle(point a, point b, point c) {
+ld rCircumCircle(pt a, pt b, pt c) {
   return rCircumCircle(
       dist(a,b), dist(b,c), dist(c,a));
 }
@@ -53,7 +49,7 @@ ld rCircumCircle(point a, point b, point c) {
 // Returns 1 iff there is a circumCenter center
 // if this function returns 1, ctr will be the
 // circumCircle center and r = rCircumCircle
-bool circumCircle(point p1, point p2, point p3, point &ctr, ld &r){
+bool circumCircle(pt p1, pt p2, pt p3, pt &ctr, ld &r){
   ld a = p2.x - p1.x, b = p2.y - p1.y;
   ld c = p3.x - p1.x, d = p3.y - p1.y;
   ld e = a * (p1.x + p2.x) + b * (p1.y + p2.y);
@@ -67,11 +63,11 @@ bool circumCircle(point p1, point p2, point p3, point &ctr, ld &r){
   return true;
 }
 
-// returns if pt d is inside the circumCircle
-// defined by a,b,c
-bool inCircumCircle(point a, point b,
-    point c, point d) {
-  vec va=toVec(a,d), vb=toVec(b,d), vc=toVec(c,d);
+// returns if pt d is strictly inside the
+// circumCircle defined by a,b,c
+// for non strict, change < to <=
+bool inCircumCircle(pt a, pt b,  pt c, pt d) {
+  pt va=(d - a), vb=(d - b), vc=(d - c);
   return 0 <
    va.x * vb.y * (vc.x*vc.x + vc.y*vc.y) +
    va.y * (vb.x*vb.x + vb.y*vb.y) * vc.x +
@@ -81,5 +77,5 @@ bool inCircumCircle(point a, point b,
    va.x * (vb.x*vb.x+vb.y*vb.y) * vc.y;
 }
 
-bool canFormTriangle(ld a, ld b, ld c) {
+bool canFormTriangle(NUM a, NUM b, NUM c) {
   return a+b > c && a+c > b && b+c > a; }
