@@ -10,8 +10,8 @@ NUM maxDist2(vector<pt> &hull) {
 	}
 	return ret;
 }
-// returns the squared width of the convex hull
-ld width2(vector<pt> &hull) {
+// returns the width of the convex hull
+ld width(vector<pt> &hull) {
 	int n = hull.size(), b = 1;
 	if (n <= 1) return 0;
 	ld ret = 1e20;
