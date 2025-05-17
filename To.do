@@ -15,3 +15,5 @@
 - Wat is een cartesian tree?
 - Test Rotating Callipers
 - Bekijk Closest Points in detail
+- Li-Chao tree toevoegen
+- in Polygon isConvex bijwerken voor meerdere punten op 1 lijn!

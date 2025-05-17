@@ -39,8 +39,3 @@ ld angle(pt a, pt o, pt b) {
     antw += 2 * PI;
   return antw;
 }
-
-// note: to accept collinear points, change `> 0'
-// returns true if r is on the left side of line pq
-bool ccw(pt p, pt q, pt r) {
-  return ((q - p) ^ (r - p)) > 0; }

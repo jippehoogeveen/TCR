@@ -47,6 +47,11 @@ bool col(pt a, pt b, pt c) {
 	return abs((a-b) ^ (a-c)) < EPS;
 }
 
+// note: to accept collinear points, change `> 0'
+// returns true if r is on the left side of line pq
+bool ccw(pt p, pt q, pt r) {
+	return ((q - p) ^ (r - p)) > 0; }
+
 // true => 1 intersection, false => parallel or same
 bool linesIntersect(pt a, pt b, pt c, pt d) {
 	return abs((a-b) ^ (c-d)) > EPS;
@@ -94,24 +99,14 @@ int segmentIntersection(pt p, pt dp, pt q, pt dq,
 	return 0 <= min(c0,c1) && max(c0,c1) <= c;
 }
 
-// Returns TWICE the area of a polygon (for integers)
-NUM polygonTwiceArea(const vector<pt> &p) {
-	NUM area = 0;
-	for (int n = sz(p), i=0, j=n-1; i<n; j = i++)
-		area += p[i] ^ p[j];
-	return abs(area); // area < 0 <=> p ccw
-}
-
-bool insidePolygon(const vector<pt> &pts, pt p, bool strict = true) {
-	int n = 0;
-	for (int N = sz(pts), i = 0, j = N - 1; i < N; j = i++) {
-		// if p is on edge of polygon
-		if (segmentHasPoint(p, pts[i], pts[j])) return !strict;
-		// or: if(distPtSegmentSq(p, pts[i], pts[j]) <= EPS) return !strict;
-
-		// increment n if segment intersects line from p
-		n += (max(pts[i].y, pts[j].y) > p.y && min(pts[i].y, pts[j].y) <= p.y &&
-			(((pts[j] - pts[i])^(p-pts[i])) > 0) == (pts[i].y <= p.y));
-	}
-	return n & 1; // inside if odd number of intersections
-}
+// line segment p-q intersect with line A-B.
+// NUM has to be ld!
+pt lineIntersectSeg(pt p, pt q,
+	  pt A, pt B) {
+	ld a = B.y - A.y;
+	ld b = A.x - B.x;
+	ld c = B.x * A.y - A.x * B.y;
+	ld u = fabs(a * p.x + b * p.y + c);
+	ld v = fabs(a * q.x + b * q.y + c);
+	return make_pair((p.x*v + q.x*u) / (u+v),
+				 (p.y*v + q.y*u) / (u+v)); }
