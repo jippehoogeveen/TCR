@@ -1,24 +1,6 @@
 int sgn(const ll& a) { return (a > 0) - (a < 0);}
-struct pt {
-	ll x, y;
-	pt() { }
-	pt(ll _x, ll _y) : x(_x), y(_y) { }
-	pt operator-(const pt& p) const {
-		return pt(x - p.x, y - p.y); }
-	ll cross(const pt& p) const {
-		return x*p.y - y*p.x; }
-	ll cross(const pt& a, const pt& b) const {
-		return (a - *this).cross(b - *this); }
-	ll dot(const pt& p) const {
-		return x*p.x + y*p.y; }
-	ll dot(const pt& a, const pt& b) const {
-		return (a - *this).dot(b - *this); }
-	ll lenSq() const { return this->dot(*this); }
-	bool operator==(const pt& p) const {
-		return x == p.x && y == p.y; }
-};
 
-const pt inf_pt = pt(1e18, 1e18);
+const pt inf_pt = make_pair(1e18, 1e18);
 
 struct Quad { // `QuadEdge` originally
 	pt O; // origin
@@ -62,9 +44,9 @@ Quad* connect(Quad* a, Quad* b) {
 }
 
 bool left_of(pt p, Quad* e) {
-	return p.cross(e->O, e->dest()) > 0; }
+	return ((e->O - p) ^ (e->dest() - p)) > 0; }
 bool right_of(pt p, Quad* e) {
-	return p.cross(e->O, e->dest()) < 0; }
+	return ((e->O - p) ^ (e->dest() - p)) < 0; }
 
 template <class T> T det3(T a1, T a2, T a3,
 		T b1, T b2, T b3, T c1, T c2, T c3) {
@@ -75,14 +57,14 @@ template <class T> T det3(T a1, T a2, T a3,
 // Calculate directly with __int128, or with angles
 bool in_circle(pt a, pt b, pt c, pt d) {
 	__int128 det = 0;
-	det -= det3<__int128>(b.x,b.y,b.lenSq(),
-		c.x,c.y,c.lenSq(), d.x,d.y,d.lenSq());
-	det += det3<__int128>(a.x,a.y,a.lenSq(),
-		c.x,c.y,c.lenSq(), d.x,d.y,d.lenSq());
-	det -= det3<__int128>(a.x,a.y,a.lenSq(),
-		b.x,b.y,b.lenSq(), d.x,d.y,d.lenSq());
-	det += det3<__int128>(a.x,a.y,a.lenSq(),
-		b.x,b.y,b.lenSq(), c.x,c.y,c.lenSq());
+	det -= det3<__int128>(b.x,b.y,b * b,
+		c.x,c.y,c * c, d.x,d.y,d * d);
+	det += det3<__int128>(a.x,a.y,a * a,
+		c.x,c.y,c * c, d.x,d.y,d * d);
+	det -= det3<__int128>(a.x,a.y,a * a,
+		b.x,b.y,b * b, d.x,d.y,d * d);
+	det += det3<__int128>(a.x,a.y,a * a,
+		b.x,b.y,b * b, c.x,c.y,c * c);
 	return det > 0;
 }
 
@@ -96,7 +78,7 @@ pair<Quad*, Quad*> build_tr(int l, int r,
 		Quad *a = make_edge(p[l], p[l+1]);
 		Quad *b = make_edge(p[l+1], p[r]);
 		splice(a->rev(), b);
-		int sg = sgn(p[l].cross(p[l + 1], p[r]));
+		int sg = sgn((p[l + 1] - p[l]) ^(p[r] - p[l]));
 		if (sg == 0) return make_pair(a, b->rev());
 		Quad* c = connect(b, a);
 		if (sg == 1) return make_pair(a, b->rev());
@@ -155,7 +137,7 @@ vector<tuple<pt, pt, pt>> delaunay(vector<pt> p) {
 	auto res = build_tr(0, sz(p) - 1, p);
 	Quad* e = res.first;
 	vector<Quad*> edges = {e};
-	while(e->onext->dest().cross(e->dest(),e->O) < 0)
+	while(((e->dest() - e->onext->dest()) ^(e->O - e->onext->dest())) < 0)
 		e = e->onext;
 	auto add = [&p, &e, &edges]() {
 		Quad* cur = e;

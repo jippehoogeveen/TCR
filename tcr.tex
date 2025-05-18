@@ -118,12 +118,6 @@
 % \inputminted[fontsize=\normalsize,baselinestretch=1,breaklines,tabsize=2]{bash}{code/test.sh}
 
 \begin{center}
-hash
-\end{center}
-
-\input{code/hash.sh}
-
-\begin{center}
 template.cc
 \end{center}
 
@@ -184,7 +178,7 @@ $p$.
 
 \subsection{Numeric Integration}
 \ifverbose
-Numeric integration using Simpson's rule.
+Numeric integration using Simpson's rule (with $O(EPS^4)$ error).
 \fi
 \code{math/numeric_integration.cpp}
 
@@ -248,13 +242,14 @@ does not kill $0$ on first pass.
 	Step 2: $B_{k+1}(x) = (-B_k(x)^2 A(x) + 2 B_k(x)) \mod x^{2^{k+1}}$.
 
 \item \textbf{Fast subset convolution:}
-	Given array $a_i$ of size $2^k$ calculate $b_i = \sum_{j \BitAnd i = i} a_j$.
+	Given array $a_i$ of size $2^k$ calculate $b_i = \sum_{j \BitAnd i = j} a_j$.
 	\code{math/subset_conv.cpp}
 
 \item \textbf{Primitive Roots:}
 	It only exists when $n$ is $2, 4, p^k, 2p^k$, where $p$ odd prime.
 	If $g$ is a primitive root, all primitive roots are of the form $g^k$
-	where $k,\phi(p)$ are coprime (hence there are $\phi(\phi(p))$ primitive roots).
+	where $k,\phi(p)$ are coprime (hence there are $\phi(\phi(p))$ primitive roots). Examples:\\
+    $10^9 + 7 : 5$,\ $10^9 + 9 : 13$,\ $10^9 + 21 : 2$,\ $10^9 + 33 : 5$,\ $10^9 + 87 : 3$,\ $36028797018963971 : 2$,\ $(10^9 + 7)^2 : 5$
 	
 \item \textbf{Maximum number of divisors:} \\
 \\
@@ -604,7 +599,6 @@ different moduli to minimize chance of collision.
 \code{geometry/main.cpp}
 
 \subsection{Convex Hull $\mathcal{O}(n \log n)$}
-Returns the hull in \textbf{counter-clockwise order}.
 \code{geometry/convex_hull.cpp}
 
 \subsection{Rotating Calipers $\mathcal{O}(n)$}
@@ -1103,3 +1097,4 @@ Let $p_j$ be the time task $j$ takes on a machine, $d_j$ the deadline, $C_j$ the
 \end{multicols*}
 
 \end{document}
+
