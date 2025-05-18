@@ -1,5 +1,5 @@
 - Wat is een cartesian tree?
 - Bekijk Closest Points in detail
 - Werk RMST bij naar compatibel met main code in geometry
-- Li-Chao tree toevoegen
 - in Polygon isConvex bijwerken voor meerdere punten op 1 lijn!
+- Hash goedzetten van Li-Chao tree!

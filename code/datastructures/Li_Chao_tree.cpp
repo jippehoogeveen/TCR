@@ -1,5 +1,4 @@
-//Can be any pseudoline
-struct line {
+struct line { //Can be any pseudoline
     ll a, b;
     line(): a(0), b(0) {}
     line(ll _a, ll _b): a(_a), b(_b) {}
@@ -10,7 +9,7 @@ struct line {
 struct LiChaoTree {
     ll width;
     vector<line> tree; vi v;
-    LiChaoTree(vi a) { //a can be any increasing sequence
+    LiChaoTree(vi a) { //any increasing sequence
         for(width = 1; width < sz(a); width *= 2) ;
         v = vi(2 * width - 1);
         tree = vector<line>(2 * width - 1);
@@ -28,11 +27,11 @@ struct LiChaoTree {
             swap(l,cur); }
         if(l.overtakes(cur)) insert(l, 2 * i + 2);
         else insert(l, 2 * i + 1); }
-    ll query(ll i) { //query the maximum value for a[i]
-        ll j = (i + width - 1);
-        ll res = tree[j].value(i);
-        while(j > 0) {
-            j = (j - 1) / 2;
-            res = max(res, tree[j].value(i)); }
+    ll query(ll i) { //query maximum value at a[i]
+        ll k = (i + width - 1);
+        ll res = tree[k].value(i);
+        while(k > 0) {
+            k = (k - 1) / 2;
+            res = max(res, tree[k].value(i)); }
         return res; }
 };
