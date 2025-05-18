@@ -8,13 +8,14 @@ struct line {
 };
 
 struct LiChaoTree {
-    ll l, r, width; //query values lie in [l, r)
+    ll width;
     vector<line> tree; vi v;
-    LiChaoTree(ll _l, ll _r): l(_l), r(_r) {
-        for(width = 1; width < r - l; width *= 2) ;
+    LiChaoTree(vi a) { //a can be any increasing sequence
+        for(width = 1; width < sz(a); width *= 2) ;
         v = vi(2 * width - 1);
         tree = vector<line>(2 * width - 1);
-        REP(i, width) v[i + width - 1] = min(l + i, r - 1);
+        REP(i, width)
+          v[i + width - 1] = a[min(i, sz(a) - 1)];
         for(ll i = width - 2; i >= 0; i--)
           v[i] = v[2 * i + 2];
         for(ll i = 0; i < width - 1; i++)
@@ -27,11 +28,11 @@ struct LiChaoTree {
             swap(l,cur); }
         if(l.overtakes(cur)) insert(l, 2 * i + 2);
         else insert(l, 2 * i + 1); }
-    ll query(ll x) {
-        ll i = (x - l + width - 1);
-        ll res = tree[i].value(x);
-        while(i > 0) {
-            i = (i - 1) / 2;
-            res = max(res, tree[i].value(x)); }
+    ll query(ll i) { //query the maximum value for a[i]
+        ll j = (i + width - 1);
+        ll res = tree[j].value(i);
+        while(j > 0) {
+            j = (j - 1) / 2;
+            res = max(res, tree[j].value(i)); }
         return res; }
 };
