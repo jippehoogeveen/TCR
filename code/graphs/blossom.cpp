@@ -64,9 +64,9 @@ vi find_augmenting_path(const vvi &adj,const vi &m){
             while (a[s] != it) s++;
             if ((height[it] & 1) ^ (s < sz(a) - sz(b)))
               reverse(all(a)), s = sz(a)-s-1;
-            while(a[s]!=c)q.pb(a[s]),s=(s+1)%size(a);
+            while(a[s]!=c) q.pb(a[s]), s=(s+1) % sz(a);
             q.pb(c);
-            rep(i,t+1,size(p)) q.pb(root[p[i]]);
+            rep(i,t+1,sz(p)) q.pb(root[p[i]]);
             return q; } } }
       emarked[v][w] = emarked[w][v] = true; }
     marked[v] = true; } return q; }
