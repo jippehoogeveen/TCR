@@ -28,7 +28,7 @@ vi find_augmenting_path(const vvi &adj,const vi &m){
           while(c != -1) a.pb(c), c = par[c];
           c = w;
           while(c != -1) b.pb(c), c = par[c];
-          while(!a.empty()&&!b.empty()&&a.back()==b.back())
+          while(!a.empty() && !b.empty() && a.back() == b.back())
             c = a.back(), a.pop_back(), b.pop_back();
           marked = vb(n,false);
           fill(par.begin(), par.end(), 0);
