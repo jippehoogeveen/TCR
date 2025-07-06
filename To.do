@@ -3,3 +3,4 @@
 - Werk RMST bij naar compatibel met main code in geometry
 - in Polygon isConvex bijwerken voor meerdere punten op 1 lijn!
 - Hash goedzetten van Li-Chao tree!
+- Hashes checken!

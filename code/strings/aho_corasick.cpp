@@ -1,4 +1,4 @@
-const int MAXP = 100, MAXLEN = 200, SIGMA = 26, MAXTRIE = MAXP * MAXLEN;
+const int MAXP = 100, SIGMA = 26, MAXTRIE = 100001; //1 more than #letters!
 
 int nP;
 string P[MAXP], S;

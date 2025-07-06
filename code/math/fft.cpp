@@ -4,7 +4,7 @@ const int LOGN = 19, MAXN = 1 << LOGN;
 int rev[MAXN];
 cpx rt[MAXN], a[MAXN] = {}, b[MAXN] = {};
 
-void fft(cpx *A) {
+void fft(cpx A) {
 	REP(i, MAXN) if (i < rev[i]) swap(A[i], A[rev[i]]);
 	for (int k = 1; k < MAXN; k *= 2)
 		for (int i = 0; i < MAXN; i += 2*k) REP(j, k) {
