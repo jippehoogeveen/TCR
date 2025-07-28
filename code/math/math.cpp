@@ -27,6 +27,8 @@ ll mod_pow(ll a, ll b, ll m) {
 // returns x, y such that ax + by = gcd(a, b)
 ll egcd(ll a, ll b, ll &x, ll &y) {
 	ll xx = y = 0, yy = x = 1;
+	if(a < 0) a *= -1, x = -1;
+	if(b < 0) b *= -1, yy = -1;
 	while (b) {
 		x -= a / b * xx; swap(x, xx);
 		y -= a / b * yy; swap(y, yy);
@@ -52,13 +54,25 @@ vi totient(int N) {
 	return phi;
 }
 
-// calculate nCk % p (p prime!)
+//Calculate (nCK % m) in O(k)
+//Assert gcd(i, m) = 1 for i <= k
+ll binom(ll n, ll k, ll m) {
+	ll ans = 1, inv, y;
+	REP(i, k) {
+		ans = mod(ans * (n - i), m);
+		egcd(i + 1, m, inv, y);
+		ans = mod(ans * inv, m);
+	}
+	return ans;
+}
+
+// calculate nCk % p (p prime!) O(p log_p(n))
 ll lucas(ll n, ll k, ll p) {
 	ll ans = 1;
 	while (n) {
 		ll np = n % p, kp = k % p;
 		if (np < kp) return 0;
-		ans = mod(ans * binom(np, kp), p); // (np C kp)
+		ans = mod(ans * binom(np, kp, p), p); // (np C kp)
 		n /= p; k /= p;
 	}
 	return ans;
