@@ -193,14 +193,13 @@ For \texttt{OR}-convolution, use $\quad\,\,\, (x, \, x + y), \quad (x, \, -x + y
 
 Solves a tridiagonal system of linear equations \[ a_i x_{i-1} + b_i x_i + c_i x_{i+1} = d_i \] where $a_1 = c_n = 0$.
 Beware of numerical instability.
+\textbf{Werkt nu niet stabiel!}
 \code{math/tridiagonal.cpp}
 
 \subsection{Number of Integer Points under Line}
 Count the number of integer solutions to $Ax+By\leq C$, $0 \leq x \leq
 n$, $0 \leq y$. In other words, evaluate the sum $\sum_{x=0}^n
-\left\lfloor \frac{C-Ax}{B} + 1\right\rfloor$. To count all solutions,
-let $n = \left\lfloor \frac{c}{a}\right\rfloor$. In any case, it must hold
-that $C-nA \geq 0$. Be very careful about overflows.
+\max(0,\left\lfloor \frac{C-Ax}{B} + 1\right\rfloor)$. Be very careful about overflows.
 \code{math/floor_sum.cpp}
 
 \subsection{Solving linear recurrences}
@@ -341,7 +340,7 @@ Container where you can add lines of the form $y_i(x) = k_i x + m_i$ and query $
 
 \subsection{Li-Chao tree}
 \label{sect:lct}
-Tree where you can add pseudolines in $O(\log(n))$ and query the maximum line for $n$ distinct values in $O(\log(n))$. 2 pseudolines can intersect at most once.
+Tree where you can add pseudolines in $O(\log(n))$ and query the maximum line for values $a_1 < a_2 < \cdots < a_n$ in $O(\log(n))$. 2 pseudolines can intersect at most once.
 \code{datastructures/Li_Chao_tree.cpp}
 
 %\subsection{Convex Hull Trick (replace $O(n^2)$ by respectively $O(n)$ and $O(n\log n)$}
@@ -410,6 +409,10 @@ This is only useful if there are edges with weight $w_{i j} < 0$ in the graph.
 
 % \subsubsection{Minimum Vertex Cover in Bipartite Graphs}
 % \code{graphs/bipartite_mvc.cpp}
+
+\subsubsection{Blossom matching $\mathcal{O}(E V^2)$}
+\label{sec:bm}
+\code{graphs/blossom.cpp}
 
 \subsubsection{Stable marriage}
 With $n$ men, $m \geq n$ women, $n$ preference lists of women for each men, and
