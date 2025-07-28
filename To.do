@@ -4,3 +4,7 @@
 - in Polygon isConvex bijwerken voor meerdere punten op 1 lijn!
 - Hash goedzetten van Li-Chao tree!
 - Hashes checken!
+- Tridiagonal Matrix geeft fouten!
+
+Gecontroleerd:
+	Sectie 1

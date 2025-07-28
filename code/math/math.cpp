@@ -21,7 +21,7 @@ ll mod_pow(ll a, ll b, ll m) {
 		a = (a * a) % m; // mod_mul
 		b >>= 1;
 	}
-	return r;
+	return mod(r,m);
 }
 
 // returns x, y such that ax + by = gcd(a, b)
