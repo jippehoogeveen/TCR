@@ -1,7 +1,7 @@
-template <class Comp = less<int>> struct heap {
-	vi q, loc; Comp op;
-	heap() : op(Comp()) {}
-	bool cmp(int i, int j) { return op(q[i], q[j]); }
+vi d;
+struct heap {
+	vi q, loc;//q is index not value!
+	bool cmp(int i, int j) { return d[q[i]] < d[q[j]]; }
 	void swp(int i, int j) {
 		swap(q[i], q[j]), swap(loc[q[i]], loc[q[j]]);
 	}
@@ -17,11 +17,10 @@ template <class Comp = less<int>> struct heap {
 	}
 	void push(int n) {
 		while (n >= sz(loc)) loc.pb(-1);
-		assert(loc[n] == -1);
 		loc[n] = sz(q), q.pb(n);
 		swim(sz(q) - 1);
 	}
-	int top() { assert(!empty()); return q[0]; }
+	int top() { return q[0]; }
 	int pop() {
 		int res = top();
 		q[0] = q.back(), q.pop_back();
@@ -33,7 +32,6 @@ template <class Comp = less<int>> struct heap {
 			if (cmp(i, (i-1)/2)) swp(i, (i-1)/2);
 	}
 	void update_key(int n) {
-		assert(loc[n] != -1);
 		swim(loc[n]), sink(loc[n]);
 	}
 	int size() { return sz(q); }
