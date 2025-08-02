@@ -1,7 +1,10 @@
-vi d;
+//heap stores keys, not values
+//Use values in compare function
 struct heap {
-	vi q, loc;//q is index not value!
-	bool cmp(int i, int j) { return d[q[i]] < d[q[j]]; }
+	vi q, loc;
+	bool (*less) (ll, ll);
+	heap(bool (*_less) (ll, ll)) : less(_less) {}
+	bool cmp(int i, int j) { return less(q[i],q[j]); }
 	void swp(int i, int j) {
 		swap(q[i], q[j]), swap(loc[q[i]], loc[q[j]]);
 	}

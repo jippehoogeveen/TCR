@@ -1,4 +1,5 @@
 #define INC(c) ((c) == K - 1 ? 0 : (c) + 1)
+const ld EPS = 1e-9;
 template <int K> struct kd_tree {
   struct pt {
     double coord[K];
@@ -41,7 +42,7 @@ template <int K> struct kd_tree {
       : p(_p), l(_l), r(_r) {  } };
   node *root;
 
-  // kd_tree() : root(NULL) { }
+  kd_tree() : root(NULL) { }
   kd_tree(vector<pt> pts) {
     root = construct(pts, 0, size(pts) - 1, 0); }
   node* construct(vector<pt> &pts, int fr, int to, int c) {
@@ -68,7 +69,6 @@ template <int K> struct kd_tree {
   void _clr(node *n) {
     if (n) _clr(n->l), _clr(n->r), delete n; }
   pt nearest_neighbour(const pt &p, bool same=true) {
-    assert(root);
     double mn = INFINITY, cs[K];
     REP(i,K) cs[i] = -INFINITY;
     pt from(cs);

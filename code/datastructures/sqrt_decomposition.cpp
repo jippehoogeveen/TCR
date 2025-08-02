@@ -5,22 +5,22 @@ vector<segment> T;
 int K;
 void rebuild() {
   int cnt = 0;
-  rep(i,0,size(T))
-    cnt += size(T[i].arr);
+  REP(i,sz(T))
+    cnt += sz(T[i].arr);
   K = static_cast<int>(ceil(sqrt(cnt)) + 1e-9);
   vi arr(cnt);
-  for (int i = 0, at = 0; i < size(T); i++)
-    rep(j,0,size(T[i].arr))
+  for (int i = 0, at = 0; i < sz(T); i++)
+    REP(j,sz(T[i].arr))
       arr[at++] = T[i].arr[j];
   T.clear();
   for (int i = 0; i < cnt; i += K)
-    T.push_back(segment(vi(arr.begin()+i,
+    T.pb(segment(vi(arr.begin()+i,
                            arr.begin()+min(i+K, cnt)))); }
 int split(int at) {
   int i = 0;
-  while (i < size(T) && at >= size(T[i].arr))
-    at -= size(T[i].arr), i++;
-  if (i >= size(T)) return size(T);
+  while (i < sz(T) && at >= sz(T[i].arr))
+    at -= sz(T[i].arr), i++;
+  if (i >= sz(T)) return sz(T);
   if (at == 0) return i;
   T.insert(T.begin() + i + 1,
       segment(vi(T[i].arr.begin() + at, T[i].arr.end())));

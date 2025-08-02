@@ -27,7 +27,6 @@ struct LineContainer : multiset<Line> {
 			isect(x, erase(y));
 	}
 	ll query(ll x) {
-		assert(!empty());
 		Q=1; auto l = *lower_bound({0,0,x}); Q=0;
 		return l.k * x + l.m;
 	}
