@@ -1,8 +1,8 @@
-struct bi_graph {
+struct bigraph {
 	int n, m, s; vvi G; vi L, R, d;
-	bi_graph(int _n, int _m) : n(_n), m(_m), s(0),
+	bigraph(int _n, int _m) : n(_n), m(_m), s(0),
 			G(n), L(n,-1), R(m,n), d(n+1) {}
-	void add_edge(int a, int b) { G[a].pb(b); }
+	void addedge(int a, int b) { G[a].pb(b); }
 	bool bfs() {
 		queue<int> q; d[n] = LLONG_MAX;
 		REP(v, n)
@@ -24,7 +24,7 @@ struct bi_graph {
 			}
 		d[v] = LLONG_MAX; return false;
 	}
-	int max_match() {
+	int maxmatch() {
 		while (bfs()) REP(i,n) s += L[i]<0 && dfs(i);
 		return s;
 	}
@@ -37,9 +37,9 @@ struct bi_graph {
 		}
 	}
 
-	vi min_vertex_cover() {
+	vi minvertexcover() {
 		vector<bool> alt(n+m, false); vi res;
-		max_match();
+		maxmatch();
 		REP(i, n) if (L[i] < 0) dfs2(i, alt);
 		// !alt[i] (i<n) OR alt[i] (i >= n)
 		REP(i, n+m) if (alt[i] != (i<n)) res.pb(i);

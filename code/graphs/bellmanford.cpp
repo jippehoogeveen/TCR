@@ -1,7 +1,7 @@
 const ll INF = 1LL << 61;
 // G[u] = { (v,w) | edge u->v, cost w }
 vi bellman_ford(vector<vii> G, ll s) {
-	ll n = G.size();
+	ll n = sz(G);
 	vi d(n, INF); d[s] = 0;
 	REP(loops, n) REP(u, n) if(d[u] != INF)
 		for(ii e : G[u]) if(d[u] + e.y < d[e.x])

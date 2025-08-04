@@ -20,19 +20,29 @@ struct Dinic {
 			}
 		} return 0;
 	}
+	void bfs(int s) {
+		fill(all(H), 0); H[s] = 1;
+		queue<int> q; q.push(s);
+		while (!q.empty()) {
+			int v = q.front(); q.pop();
+			for (int w : E[v])
+				if (G[w].f < G[w].c && !H[G[w].t])
+					H[G[w].t] = H[v] + 1, q.push(G[w].t);
+		}
+	}
 	ll maxflow(int s, int t, ll f = 0) {
 		while (1) {
-			fill(all(H), 0); H[s] = 1;
-			queue<int> q; q.push(s);
-			while (!q.empty()) {
-				int v = q.front(); q.pop();
-				for (int w : E[v])
-					if (G[w].f < G[w].c && !H[G[w].t])
-						H[G[w].t] = H[v] + 1, q.push(G[w].t);
-			}
+			bfs(s);
 			if (!H[t]) return f;
 			fill(all(P), 0);
 			while (ll df = dfs(t, s, LLONG_MAX)) f += df;
 		}
+	}
+	vector<bool> mincut(int s, int t) {
+		maxflow(s,t);
+		bfs(s);
+		vector<bool> antw(sz(H));
+		REP(i, sz(H)) antw[i] = !H[i];
+		return antw;
 	}
 };

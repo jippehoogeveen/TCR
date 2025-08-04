@@ -8,6 +8,8 @@
 - Dancing links is nu zo te zien gewoon een doubly linked list (die niet werkt als je x verwijderd, x->r verwijderd en x restored). Hij werkt nu met pointers en ik heb variant toegevoegd met vectors. Wat doen we ermee?
 - Wat kan je met kd-tree (behalve nearest neighbor)?
 - Wat kan je met huidige sqrt decomposition code?
+- Wat doet de code IDA*? Hij werkt nu niet en ik heb geen idee wat voor input je erin moet gooien of wat voor output je eruit krijgt.
+- Gomory-Hu Tree compileert niet goed met Dinic!
 
 Gecontroleerd:
 	Sectie 1

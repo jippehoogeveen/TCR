@@ -18,7 +18,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcad8ae1-20db-48ac-bad3-8c7c0968affd" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../To.do" beforeDir="false" afterPath="$PROJECT_DIR$/../../To.do" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bellmanford.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/bellmanford.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dinic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dinic.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dominator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dominator.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/findcycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/findcycle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/floydwarshall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/floydwarshall.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hopcroft_karp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hopcroft_karp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/maxmatch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/maxmatch.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mincostmaxflow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mincostmaxflow.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +86,8 @@
       <workItem from="1749121887454" duration="18000" />
       <workItem from="1749125329084" duration="941000" />
       <workItem from="1749459269798" duration="19000" />
+      <workItem from="1754295748880" duration="7293000" />
+      <workItem from="1754308016518" duration="1684000" />
     </task>
     <servers />
   </component>
