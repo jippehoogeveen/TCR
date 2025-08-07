@@ -1,4 +1,4 @@
-const ll oo = LLONG_MAX, MAXN = 4024;
+const ll oo = 1e9, MAXN = 4024;
 
 // N = #V, R = root
 int N, R;

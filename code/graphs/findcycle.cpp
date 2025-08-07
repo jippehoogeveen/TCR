@@ -1,23 +1,24 @@
 vvi G;
 vb vis, done;
 vi p;
-ii backedge(ll i, bool dir) {
+ii backedge(ll i) {
 	vis[i] = true;
 	for(ll j : G[i])
 		if(!vis[j]) {
 			p[j] = i;
-			ii antw = backedge(j, dir);
+			ii antw = backedge(j);
 			if(antw.x != -1) return antw;
 		}
-		else if(!done[j] && (dir || j != p[i])) return {i,j};
+		else if(!done[j]) return {i,j};
 	done[i] = true;
 	return {-1,-1}; }
-vi findcycle(bool dir) {
+//directed
+vi findcycledir() {
 	ll n = sz(G);
 	vis = vb(n,false), done = vb(n,false);
 	p = vi(n,-1);
 	REP(i,n) if(!vis[i]) {
-		ii antw = backedge(i, dir);
+		ii antw = backedge(i);
 		if(antw.x != -1) {
 			vi c; ll v = antw.x, w = antw.y;
 			c.pb(v);
@@ -27,6 +28,8 @@ vi findcycle(bool dir) {
 		}
 	}
 	return {}; }
+
+//undirected
 vi findcycleundir(const vvi &G, int v0) {
 	vi p(sz(G), -1), s{v0};
 	while (!s.empty()) {

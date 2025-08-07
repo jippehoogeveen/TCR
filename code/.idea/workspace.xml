@@ -18,36 +18,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/strings/manacher.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/strings/manacher.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../To.do" beforeDir="false" afterPath="$PROJECT_DIR$/../To.do" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/MisraGries.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/MisraGries.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs/arborescence-v2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/arborescence-v2.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/arborescence.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/arborescence.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/blossom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/blossom.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/centroid_decomposition.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/centroid_decomposition.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/dinic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/dinic.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/euler_path.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/euler_path.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/euler_path_undirected.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/euler_path_undirected.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphs/findcycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/findcycle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/hld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/hld.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/hopcroft_karp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/hopcroft_karp.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/lca.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/lca.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/maxmatch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/maxmatch.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/min_mean_cycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/min_mean_cycle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/mincostmaxflow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/mincostmaxflow.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/scc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/scc.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/toposort.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/toposort.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minimum_assignment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/minimum_assignment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/simplex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/other/simplex.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/satsolver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/satsolver.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/aho_corasick.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/aho_corasick.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/eertree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/eertree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/lcs.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/lcs.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/suffix_automaton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/suffix_automaton.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/template.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +86,7 @@
       <workItem from="1754476843821" duration="476000" />
       <workItem from="1754480438042" duration="220000" />
       <workItem from="1754500038289" duration="618000" />
-      <workItem from="1754550578446" duration="1844000" />
+      <workItem from="1754550578446" duration="6782000" />
     </task>
     <servers />
   </component>
