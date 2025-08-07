@@ -1,5 +1,5 @@
 vvi G;
-vector<bool> vis, done;
+vb vis, done;
 vi p;
 ii backedge(ll i, bool dir) {
 	vis[i] = true;
@@ -14,7 +14,7 @@ ii backedge(ll i, bool dir) {
 	return {-1,-1}; }
 vi findcycle(bool dir) {
 	ll n = sz(G);
-	vis = vector<bool>(n,false), done= vector<bool>(n,false);
+	vis = vb(n,false), done = vb(n,false);
 	p = vi(n,-1);
 	REP(i,n) if(!vis[i]) {
 		ii antw = backedge(i, dir);

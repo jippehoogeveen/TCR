@@ -1,18 +1,19 @@
-const int oo = 0x3f3f3f3f, MAXN = 4024;
+const ll oo = LLONG_MAX, MAXN = 4024;
 
 // N = #V, R = root
 int N, R;
 // for each node a list of pairs (predecessor, cost):
-vector<pii> g[MAXN];
-int pred[MAXN], label[MAXN], node[MAXN], helper[MAXN];
+vii g[MAXN];
+int pred[MAXN], label[MAXN], node[MAXN];
+ll helper[MAXN];
 
 int get_node(int n) {
 	return node[n] == n ? n :
 			(node[n] = get_node(node[n]));
 }
 
-int update_node(int n) {
-	int m = oo;
+ll update_node(int n) {
+	ll m = oo;
 	for (auto ed : g[n]) m = min(m, ed.y);
 	REP(j, sz(g[n])) {
 		g[n][j].y -= m;
@@ -34,7 +35,7 @@ ll cycle(vi &active, int n, int &cend) {
 		int F = find(all(active), n)-active.begin();
 		vi todo(active.begin() + F, active.end());
 		active.resize(F);
-		vii> newg;
+		vii newg;
 		for (auto i: todo) node[i] = n;
 		for (auto i: todo) for(auto &ed : g[i])
 			helper[ed.x = get_node(ed.x)] = ed.y;
@@ -79,4 +80,3 @@ ll min_arbor() {
 	}
 	return res;
 }
-

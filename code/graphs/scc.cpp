@@ -1,6 +1,6 @@
 struct SCC {
 	int n, age=0, ncomps=0; vvi adj, comps;
-	vi tidx, lnk, cnr, st; vector<bool> vis;
+	vi tidx, lnk, cnr, st; vb vis;
 	SCC(vvi &_adj) : n(sz(_adj)), adj(_adj),
 			tidx(n, 0), lnk(n), cnr(n), vis(n, false) {
 		REP(i, n) if (!tidx[i]) dfs(i);

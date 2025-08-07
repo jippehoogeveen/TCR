@@ -1,11 +1,9 @@
-typedef vector<ld> VD;
-typedef vector<VD> VVD;
 const ld EPS = 1e-9;
 struct LPSolver {
- int m, n; vi B, N; VVD D;
- LPSolver(const VVD &A, const VD &b, const VD &c) :
+ int m, n; vi B, N; vvd D;
+ LPSolver(const vvd &A, const vd &b, const vd &c) :
      m(b.size()), n(c.size()),
-     N(n + 1), B(m), D(m + 2, VD(n + 2)) {
+     N(n + 1), B(m), D(m + 2, vd(n + 2)) {
   REP(i, m) REP(j, n) D[i][j] = A[i][j];
   REP(i, m) { B[i] = n + i; D[i][n] = -1;
     D[i][n + 1] = b[i]; }
@@ -37,7 +35,7 @@ struct LPSolver {
         D[r][s]) && B[i] < B[r]) r = i; }
    if (r == -1) return false;
    Pivot(r, s); } }
- ld Solve(VD &x) {
+ ld Solve(vd &x) {
   int r = 0;
   rep(i, 1, m) if (D[i][n+1] < D[r][n+1]) r = i;
   if (D[r][n + 1] < -EPS) {
@@ -53,7 +51,7 @@ struct LPSolver {
     Pivot(i, s); }
   }
   if (!Simplex(2)) return numeric_limits<ld>::infinity();
-  x = VD(n);
+  x = vd(n);
   for (int i = 0; i < m; i++) if (B[i] < n)
     x[B[i]] = D[i][n + 1];
   return D[m][n + 1]; } };
@@ -70,9 +68,9 @@ struct LPSolver {
 // ld _A[m][n] = {{6,-1,0}, {-1,-5,0},
 //    {1,5,1}, {-1,-5,-1}};
 // ld _b[m] = {10,-4,5,-5}, _c[n]= {1,-1,0};
-// VVD A(m);
-// VD b(_b, _b + m), c(_c, _c + n), x;
-// REP(i, m) A[i] = VD(_A[i], _A[i] + n);
+// vvd A(m);
+// vd b(_b, _b + m), c(_c, _c + n), x;
+// REP(i, m) A[i] = vd(_A[i], _A[i] + n);
 // LPSolver solver(A, b, c);
 // ld value = solver.Solve(x);
 // cerr << "VALUE: " << value << endl; // 1.29032

@@ -10,11 +10,11 @@ struct TwoSat {
 	void CONST(int a) { OR(a, a); }
 	void IFF(int a, int b) { imply(a,b); imply(b,a); }
 
-	bool solve(vector<bool> &sol) {
+	bool solve(vb &sol) {
 		delete scc; scc = new SCC(adj);
 		REP(i, n) if (scc->cnr[n+i] == scc->cnr[n+(~i)])
 			return false;
-		vector<bool> seen(n, false);
+		vb seen(n, false);
 		sol.assign(n, false);
 		for (vi &cc : scc->comps) for (int v : cc) {
 			int i = v<n ? n + (~v) : v - n;

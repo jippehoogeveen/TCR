@@ -1,28 +1,27 @@
-const int MAXN = 100100;
-const int SIGMA = 26;
-const char BASE = 'a';
-char *s = new char[MAXN];
+const int sigma = 26;
+const char base = 'a';
 struct state {
-  int len, link, to[SIGMA];
-} *st = new state[MAXN+2];
+  int len, link, to[sigma];
+};
 struct eertree {
   int last, size, n;
+  vector<state> nodes;
+  string s;
   eertree() : last(1), size(2), n(0) {
-    st[0].len = st[0].link = -1;
-    st[1].len = st[1].link = 0; }
-  int extend() {
-    char c = s[n++]; int p = last;
-    while (n - st[p].len - 2 < 0 || c != s[n - st[p].len - 2])
-      p = st[p].link;
-    if (!st[p].to[c-BASE]) {
+    nodes.pb({-1,-1});
+    nodes.pb({0,0}); }
+  void extend(char c) {
+    s.pb(c); n++; int p = last;
+    while (n - nodes[p].len - 2 < 0 || c != s[n - nodes[p].len - 2])
+      p = nodes[p].link;
+    if (!nodes[p].to[c-base]) {
       int q = last = size++;
-      st[p].to[c-BASE] = q;
-      st[q].len = st[p].len + 2;
-      do { p = st[p].link;
-      } while (p != -1 && (n < st[p].len + 2 ||
-               c != s[n - st[p].len - 2]));
-      if (p == -1) st[q].link = 1;
-      else st[q].link = st[p].to[c-BASE];
-      return 1; }
-    last = st[p].to[c-BASE];
-    return 0; } };
+      nodes.pb({nodes[p].len + 2, 1});
+      nodes[p].to[c-base] = q;
+      do { p = nodes[p].link;
+      } while (p != -1 && (n < nodes[p].len + 2 ||
+               c != s[n - nodes[p].len - 2]));
+      if(p != -1) nodes[q].link = nodes[p].to[c-base]; }
+    else
+      last = nodes[p].to[c-base];
+  }};

@@ -1,13 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BackendCodeEditorMiscSettings">
     <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
     <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
     <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
-    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexRemoved" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/strings/manacher.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/strings/manacher.hash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../To.do" beforeDir="false" afterPath="$PROJECT_DIR$/../To.do" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/MisraGries.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/MisraGries.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/arborescence-v2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/arborescence-v2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/arborescence.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/arborescence.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/blossom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/blossom.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/centroid_decomposition.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/centroid_decomposition.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/dinic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/dinic.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/euler_path.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/euler_path.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/euler_path_undirected.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/euler_path_undirected.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/findcycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/findcycle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/hld.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/hld.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/hopcroft_karp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/hopcroft_karp.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/lca.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/lca.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/maxmatch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/maxmatch.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/min_mean_cycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/min_mean_cycle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/mincostmaxflow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/mincostmaxflow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/scc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/scc.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/toposort.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/toposort.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimum_assignment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/minimum_assignment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other/simplex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/other/simplex.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/satsolver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/satsolver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/aho_corasick.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/aho_corasick.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/eertree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/eertree.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/lcs.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/lcs.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/suffix_automaton.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/suffix_automaton.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/template.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,27 +66,37 @@
     <option name="minorVersion" value="2.3" />
     <option name="productBranch" value="Classic" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2vDYzbZyQhux0dxs3ZFzBzJZYoj" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.RadMigrateCodeStyle": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "main",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jippe/CLionProjects/TCR/code/strings&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jippe\CLionProjects\TCR\code\strings" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -57,6 +106,14 @@
       <option name="presentableId" value="Default" />
       <updated>1743681376168</updated>
       <workItem from="1743681378265" duration="32000" />
+      <workItem from="1754387126172" duration="3793000" />
+      <workItem from="1754393316130" duration="5671000" />
+      <workItem from="1754406737757" duration="5704000" />
+      <workItem from="1754418070260" duration="174000" />
+      <workItem from="1754476843821" duration="476000" />
+      <workItem from="1754480438042" duration="220000" />
+      <workItem from="1754500038289" duration="618000" />
+      <workItem from="1754550578446" duration="1844000" />
     </task>
     <servers />
   </component>

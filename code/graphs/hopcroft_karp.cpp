@@ -29,7 +29,7 @@ struct bigraph {
 		return s;
 	}
 
-	void dfs2(int v, vector<bool> &alt) {
+	void dfs2(int v, vb &alt) {
 		alt[v] = true;
 		for (int u : G[v]) {
 			alt[u+n] = true;
@@ -38,7 +38,7 @@ struct bigraph {
 	}
 
 	vi minvertexcover() {
-		vector<bool> alt(n+m, false); vi res;
+		vb alt(n+m, false); vi res;
 		maxmatch();
 		REP(i, n) if (L[i] < 0) dfs2(i, alt);
 		// !alt[i] (i<n) OR alt[i] (i >= n)

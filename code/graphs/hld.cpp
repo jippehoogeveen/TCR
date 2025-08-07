@@ -1,9 +1,10 @@
 struct HLD {
 	vvi adj; int cur_pos = 0;
 	vi par, dep, hvy, head, pos;
+	segmenttree st;
 
 	HLD(int n, const vvi &A) : adj(all(A)), par(n),
-			dep(n), hvy(n,-1), head(n), pos(n) {
+		dep(n), hvy(n,-1), head(n), pos(n), st(n) {
 		cur_pos = 0; dfs(0); decomp(0, 0);
 	}
 
@@ -26,14 +27,16 @@ struct HLD {
 			if (c != par[v] && c != hvy[v]) decomp(c, c);
 	}
 
-	// requires queryST(a, b) = max{A[i] | a<=i<b }.
-	int query(int a, int b) {
-		int res = 0;
+	void update(int i, ll v){ st.update(pos[i], v); }
+
+	// requires queryST(a, b) = SUM{A[i] | a<=i<=b }.
+	ll query(int a, int b) {
+		ll res = 0;
 		for (; head[a] != head[b]; b = par[head[b]]) {
 			if (dep[head[a]] > dep[head[b]]) swap(a, b);
-			res= max(res, queryST(pos[head[b]],pos[b]+1));
+			res += st.query(pos[head[b]],pos[b]);
 		}
 		if (dep[a] > dep[b]) swap(a, b);
-		return max(res, queryST(pos[a], pos[b]+1));
+		return res + st.query(pos[a], pos[b]);
 	}
 };

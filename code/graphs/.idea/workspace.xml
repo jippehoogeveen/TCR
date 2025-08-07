@@ -18,16 +18,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="dcad8ae1-20db-48ac-bad3-8c7c0968affd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../To.do" beforeDir="false" afterPath="$PROJECT_DIR$/../../To.do" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bellmanford.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/bellmanford.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MisraGries.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/MisraGries.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blossom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/blossom.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dinic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dinic.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dominator.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dominator.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/findcycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/findcycle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/floydwarshall.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/floydwarshall.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hopcroft_karp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/hopcroft_karp.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/maxmatch.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/maxmatch.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mincostmaxflow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/mincostmaxflow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/min_mean_cycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/min_mean_cycle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/scc.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/toposort.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/toposort.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../satsolver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../satsolver.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,24 +55,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.RadMigrateCodeStyle&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jippe/CLionProjects/TCR/code/graphs&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/jippe/CLionProjects/TCR/code/strings",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -87,7 +88,8 @@
       <workItem from="1749125329084" duration="941000" />
       <workItem from="1749459269798" duration="19000" />
       <workItem from="1754295748880" duration="7293000" />
-      <workItem from="1754308016518" duration="1684000" />
+      <workItem from="1754308016518" duration="2262000" />
+      <workItem from="1754386514186" duration="382000" />
     </task>
     <servers />
   </component>

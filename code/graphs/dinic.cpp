@@ -38,10 +38,10 @@ struct Dinic {
 			while (ll df = dfs(t, s, LLONG_MAX)) f += df;
 		}
 	}
-	vector<bool> mincut(int s, int t) {
+	vb mincut(int s, int t) {
 		maxflow(s,t);
 		bfs(s);
-		vector<bool> antw(sz(H));
+		vb antw(sz(H));
 		REP(i, sz(H)) antw[i] = !H[i];
 		return antw;
 	}

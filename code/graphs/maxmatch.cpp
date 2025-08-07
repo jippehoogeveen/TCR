@@ -1,4 +1,4 @@
-vector<bool> vis; vi L, R; vvi G; // L->{R,...}
+vb vis; vi L, R; vvi G; // L->{R,...}
 void addedge(int a, int b) { G[a].pb(b);}
 bool match(int u) {
 	for (int v : G[u]) {

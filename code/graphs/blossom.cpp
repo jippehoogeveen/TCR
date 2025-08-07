@@ -70,7 +70,7 @@ vi find_augmenting_path(const vvi &adj,const vi &m){
             return q; } } }
       emarked[v][w] = emarked[w][v] = true; }
     marked[v] = true; } return q; }
-vii max_matching(const vector<vi> &adj) {
+vii max_matching(const vvi &adj) {
   n = sz(adj);
   marked = vb(n);
   emarked = vvb(n,vb(n));

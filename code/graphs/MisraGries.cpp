@@ -13,7 +13,7 @@ struct MisraGries {
 
 	void color(int v, int i) {
 		vi fan = { i };
-		vector<bool> used(G[v].size());
+		vb used(G[v].size());
 		used[i] = true;
 		for (int j = 0; j < (int) G[v].size(); j++)
 			if (!used[j] && G[v][j].col >= 0 && F[G[v][fan.back()].to][G[v][j].col] < 0)

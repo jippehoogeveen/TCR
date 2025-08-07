@@ -1,20 +1,25 @@
-const int MAXV = 1000;
-multiset<int> adj[MAXV];
-list<int> L;
-list<int>::iterator euler(int at, int to,
-    list<int>::iterator it) {
-  if (at == to) return it;
-  L.insert(it, at), --it;
-  while (!adj[at].empty()) {
-    int nxt = *adj[at].begin();
-    adj[at].erase(adj[at].find(nxt));
-    adj[nxt].erase(adj[nxt].find(at));
-    if (to == -1) {
-      it = euler(nxt, at, it);
-      L.insert(it, at);
-      --it;
-    } else {
-      it = euler(nxt, to, it);
-      to = -1; } }
-  return it; }
-// usage: euler(0,-1,L.begin());
+vector<multiset<int>> adj;
+int n, m;
+vi res;
+ii start_end() {
+  vi odd; int any = 0;
+  REP(i,n) {
+    if(sz(adj[i]) % 2 == 1) odd.pb(i);
+    if(sz(adj[i]) > 0) any = i;
+  }
+  if(sz(odd) == 2) return ii(odd[0],odd[1]);
+  if(sz(odd) == 0) return ii(any,any);
+  return ii(-1,-1); }
+void makepath(ll i) {
+  while(sz(adj[i]) > 0) {
+    ll j = *adj[i].begin();
+    adj[i].erase(adj[i].find(j));
+    adj[j].erase(adj[j].find(i));
+    makepath(j); }
+  res.pb(i);
+}
+bool euler_path() {
+  ii se = start_end();
+  if (se.x == -1) return false;
+  makepath(se.x); reverse(all(res));
+  return (sz(res) == m + 1); }

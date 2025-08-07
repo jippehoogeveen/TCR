@@ -1,6 +1,6 @@
-const int MAXV = 1000, MAXE = 5000;
-vi adj[MAXV];
-int n, m, indeg[MAXV], outdeg[MAXV], res[MAXE + 1];
+vvi adj;
+int n, m;
+vi indeg, outdeg, res;
 ii start_end() {
   int start = -1, end = -1, any = 0, c = 0;
   REP(i, n) {
@@ -13,17 +13,13 @@ ii start_end() {
     return ii(-1,-1);
   if (start == -1) start = end = any;
   return ii(start, end); }
+void makepath(ll i) {
+  while(outdeg[i] > 0) makepath(adj[i][--outdeg[i]]);
+  res.pb(i);
+}
 bool euler_path() {
   ii se = start_end();
-  int cur = se.first, at = m + 1;
-  if (cur == -1) return false;
-  stack<int> s;
-  while (true) {
-    if (outdeg[cur] == 0) {
-      res[--at] = cur;
-      if (s.empty()) break;
-      cur = s.top(); s.pop();
-    } else s.push(cur), cur = adj[cur][--outdeg[cur]];
-  }
-  return at == 0;
+  if (se.x == -1) return false;
+  makepath(se.x); reverse(all(res));
+  return (sz(res) == m + 1);
 }

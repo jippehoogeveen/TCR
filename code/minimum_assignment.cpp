@@ -5,7 +5,7 @@ int minimum_assignment(int n, int m) { // n rows, m columns
 		p[0] = i;
 		int j0 = 0;
 		vi mv(m + 1, INT_MAX);
-		vector<char> used(m + 1, false);
+		vb used(m + 1, false);
 		do {
 			used[j0] = true;
 			int i0 = p[j0], delta = INT_MAX, j1;

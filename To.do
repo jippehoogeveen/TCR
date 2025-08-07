@@ -10,7 +10,20 @@
 - Wat kan je met huidige sqrt decomposition code?
 - Wat doet de code IDA*? Hij werkt nu niet en ik heb geen idee wat voor input je erin moet gooien of wat voor output je eruit krijgt.
 - Gomory-Hu Tree compileert niet goed met Dinic!
+- Minimum Arborescence in O(EV) (versie 1) werkt niet altijd.
+- Minimum Arborescence versie 2 kan misschien met vectors in plaats van arrays?
+- Suffix array uitbreiden naar willekeurige antitrie?
 
 Gecontroleerd:
 	Sectie 1
 	Sectie 2
+	Sectie 3
+	Sectie 4 tot en met 4.9
+
+Acties:
+	Dancing links
+	Sqrt decomposition weg
+	Simpele range tree
+	Cartesian tree constructie met arrays
+	Find cycle
+	

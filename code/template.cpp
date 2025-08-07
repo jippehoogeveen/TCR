@@ -7,6 +7,11 @@ typedef pair<ll, ll> ii;
 typedef vector<ll> vi;
 typedef vector<vi> vvi;
 typedef vector<ii> vii;
+typedef vector<bool> vb;
+typedef vector<vb> vvb;
+typedef vector<ld> vd;
+typedef vector<vd> vvd;
+typedef vector<string> vs;
 
 #define x first
 #define y second

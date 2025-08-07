@@ -1,12 +1,12 @@
 #include "../datastructures/union_find.cpp"
 struct arborescence {
-  int n; union_find uf;
-  vector<vector<pair<ii,int> > > adj;
+  int n; dsu uf;
+  vector<vector<pair<ii,ll> > > adj;
   arborescence(int _n) : n(_n), uf(n), adj(n) { }
-  void add_edge(int a, int b, int c) {
+  void add_edge(int a, int b, ll c) {
     adj[b].eb(ii(a,b),c); }
-  vii find_min(int r) {
-    vi vis(n,-1), mn(n,INT_MAX); vii par(n);
+  vi find_min(int r) {
+    vi vis(n,-1), mn(n,LLONG_MAX); vi par(n, -1);
     REP(i, n) {
       if (uf.find(i) != i) continue;
       int at = i;
@@ -14,14 +14,14 @@ struct arborescence {
         vis[at] = i;
         for (auto it : adj[at])
           if (it.y < mn[at] && uf.find(it.x.x) != at)
-            mn[at] = it.y, par[at] = it.x;
-        if (par[at] == ii(0,0)) return vii();
-        at = uf.find(par[at].x);
+            mn[at] = it.y, par[at] = it.x.x;
+        if (par[at] == -1) return vi();
+        at = uf.find(par[at]);
       }
       if (at == r || vis[at] != i) continue;
-      union_find tmp = uf;
+      dsu tmp = uf;
       vi seq;
-      do seq.pb(at), at = uf.find(par[at].x);
+      do seq.pb(at), at = uf.find(par[at]);
       while (at != seq.front());
       int c = uf.find(seq[0]);
       for (auto it : seq) uf.unite(it, c);
@@ -32,10 +32,10 @@ struct arborescence {
           adj[c].eb(jt.x, jt.y - mn[it]);
         adj[it].clear();
       }
-      vii rest = find_min(r);
+      vi rest = find_min(r);
       if (rest.empty()) return rest;
-      ii use = rest[c];
-      rest[at = tmp.find(use.y)] = use;
+      ll use = rest[c];
+      rest[at = tmp.find(c)] = use;
       for (int it : seq) if (it != at)
         rest[it] = par[it];
       return rest;

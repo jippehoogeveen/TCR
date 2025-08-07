@@ -3,7 +3,7 @@ const int MAXL = 100000;
 struct suffix_automaton {
   vi  len, link, occur, cnt;
   vector<map<char,int> > next;
-  vector<bool> isclone;
+  vb isclone;
   ll *occuratleast;
   int sz, last;
   string s;

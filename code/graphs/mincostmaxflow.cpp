@@ -23,7 +23,7 @@ void spBF(int s) {
 	}
 }
 
-//Kan be omitted if n small enough
+//Can be omitted if n small enough
 void spDijk(int s) {
 	vi ed(V,LLONG_MAX); ed[s] = 0;
 	set<ii> front{ii(0,s)};
