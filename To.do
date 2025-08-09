@@ -5,7 +5,6 @@ Gecontroleerd:
 	Sectie 4
 
 Acties:
-	Simpele range tree toevoegen
 	Cartesian tree constructie met arrays
 	Template consistent toevoegen
 	Arrays vervangen door vectors
@@ -17,5 +16,7 @@ Acties:
 	Hashes checken!
 
 Huilen:
-	Huilen om tridiagonal matrix (test beter om niet meer te huilen)
+	Huilen om tridiagonal matrix (test beter om niet meer te huilen): huilen teruggedraaid
+		- Uniform random werk zo ongeveer altijd
+		- Exponentiëel werkt tot n = 5000
 	Huilen om gomory hu tree (internet)
