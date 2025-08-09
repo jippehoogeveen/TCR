@@ -24,7 +24,7 @@ struct rangetree {
                 res.pb(right[ir]);
                 ir++; } }
         lind[i].pb(il); rind[i].pb(ir); return res; }
-    ll firstlarge(vi& a, ll v) {//gives smallest i with a[i] >= v
+    ll nexti(vi& a, ll v) {//first i with a[i] >= v
         ll l = -1, r = sz(a), m;
         while(r - l > 1) {
             m = (l + r) / 2;
@@ -37,6 +37,6 @@ struct rangetree {
         return q(lind[i][iy], _l, _r, 2 * i + 1) + q(rind[i][iy], _l, _r, 2 * i + 2); }
     //query #points in [xl, xr] x [yl, yr]
     ll query(ll xl, ll xr, ll yl, ll yr) {
-        ll l = firstlarge(xtop, xl), r = firstlarge(xtop, xr + 1) - 1;
-        ll y1 = firstlarge(ytop, yl), y2 = firstlarge(ytop, yr + 1);
+        ll l = nexti(xtop, xl), r = nexti(xtop, xr + 1) - 1;
+        ll y1 = nexti(ytop, yl), y2 = nexti(ytop, yr + 1);
         return q(y2, l, r, 0) - q(y1, l, r, 0); }};

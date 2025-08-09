@@ -18,97 +18,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../generate_hashes.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/Li_Chao_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/Li_Chao_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/LineContainer.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/LineContainer.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/avl_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/avl_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/avl_tree_map.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/avl_tree_map.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/bit.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/bit.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/cartesian_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/cartesian_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/convex_hull_trick.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/convex_hull_trick.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/convex_hull_trick_dynamic.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/convex_hull_trick_dynamic.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/dancing_links.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/dancing_links.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/dsu.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/dsu.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/heap.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/heap.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/kd_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/kd_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/lazy_segment_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/lazy_segment_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/misof_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/misof_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/monotonic_queue.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/monotonic_queue.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/order_statistic.cc.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/order_statistic.cc.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/persistent_segment_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/persistent_segment_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/segment_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/segment_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/sparse_table.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/sparse_table.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/sqrt_decomposition.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/sqrt_decomposition.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/CP/circles.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/CP/circles.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/CP/points_lines.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/CP/points_lines.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/CP/polygon.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/CP/polygon.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/CP/triangles.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/CP/triangles.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/closest_points.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/closest_points.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/convex_hull.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/convex_hull.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/delaunay.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/delaunay.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/gc_distance.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/gc_distance.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/main.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/main.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/primitives3d.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/primitives3d.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/rmst.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/rmst.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/rotating_calipers.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/rotating_calipers.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/MisraGries.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/MisraGries.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/arborescence-v2.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/arborescence-v2.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/bellmanford.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/bellmanford.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/blossom.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/blossom.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/centroid_decomposition.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/centroid_decomposition.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/cut_points_and_bridges.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/cut_points_and_bridges.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/dijkstra.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/dijkstra.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/dinic.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/dinic.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/dominator.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/dominator.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/euler_path.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/euler_path.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/euler_path_undirected.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/euler_path_undirected.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/findcycle.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/findcycle.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/floydwarshall.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/floydwarshall.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/gomory_hu_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/gomory_hu_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/hld.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/hld.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/hopcroft_karp.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/hopcroft_karp.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/idastar.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/idastar.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/lca.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/lca.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/maxmatch.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/maxmatch.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/min_mean_cycle.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/min_mean_cycle.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/mincostmaxflow.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/mincostmaxflow.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/mst_kruskal.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/mst_kruskal.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/mst_prim.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/mst_prim.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/scc.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/scc.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/shitty_hopcroft.cc.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/shitty_hopcroft.cc.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/stable.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/stable.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/toposort.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/toposort.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/tsort.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/tsort.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/fft.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/fft.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/fht.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/fht.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/floor_sum.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/floor_sum.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/josephus.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/josephus.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/math.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/math.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/mertens.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/mertens.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/numeric_integration.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/numeric_integration.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/primitive_root.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/primitive_root.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/subset_conv.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/subset_conv.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/summatory_phi.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/summatory_phi.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/tonelli_shanks.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/tonelli_shanks.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/tridiagonal.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/math/tridiagonal.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/berlekamp-massey.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/other/berlekamp-massey.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/dates.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/other/dates.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/floyds_algorithm.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/other/floyds_algorithm.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/lis.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/other/lis.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/overflow.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/other/overflow.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/other/simplex.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/other/simplex.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/aho_corasick.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/aho_corasick.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/edit_dist.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/edit_dist.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/eertree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/eertree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/hasher.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/hasher.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/kmp.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/kmp.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/lcs.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/lcs.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/manacher.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/manacher.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/suffix_automaton.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/suffix_automaton.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/suffix_tree.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/suffix_tree.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/suffixarray.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/suffixarray.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/trie.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/trie.cpp.hash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/z_function.cpp.hash" beforeDir="false" afterPath="$PROJECT_DIR$/strings/z_function.cpp.hash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datastructures/range_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/range_tree.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +53,7 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/jippe/CLionProjects/TCR/code/strings",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
