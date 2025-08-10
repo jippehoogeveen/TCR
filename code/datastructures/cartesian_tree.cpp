@@ -1,11 +1,11 @@
 struct node {
-  int x, y, sz;
+  int x, y, size;
   node *l, *r;
   node(int _x, int _y)
-    : x(_x), y(_y), sz(1), l(NULL), r(NULL) { } };
-int tsize(node* t) { return t ? t->sz : 0; }
+    : x(_x), y(_y), size(1), l(NULL), r(NULL) { } };
+int tsize(node* t) { return t ? t->size : 0; }
 void augment(node *t) {
-  t->sz = 1 + tsize(t->l) + tsize(t->r); }
+  t->size = 1 + tsize(t->l) + tsize(t->r); }
 pair<node*,node*> split(node *t, int x) {
   if (!t) return make_pair((node*)NULL,(node*)NULL);
   if (t->x < x) {
