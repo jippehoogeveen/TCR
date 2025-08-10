@@ -30,14 +30,9 @@ ld distPtLine(pt p, pt a, pt b) {
 ld distPtSegment(pt p, pt a, pt b) {
 	p -= a; b -= a;
 	NUM dot = p*b, len = b*b;
-	if (dot <= 0) return p*p;
-	if (dot >= len) return (p-b)*(p-b);
+	if (dot <= 0) return sqrt(p*p);
+	if (dot >= len) return sqrt((p-b)*(p-b));
 	return sqrt(p*p - ld(dot)*dot/len);
-}
-// Test if p is on line segment ab
-bool segmentHasPoint(pt p, pt a, pt b) {
-	pt u = p-a, v = p-b;
-	return abs(u^v) < EPS && u*v <= 0;
 }
 
 // projects p onto the line ab
@@ -61,6 +56,12 @@ bool linesIntersect(pt a, pt b, pt c, pt d) {
 	return abs((a-b) ^ (c-d)) > EPS;
 }
 
+// Test if p is on line segment ab
+bool segmentHasPoint(pt p, pt a, pt b) {
+	pt u = p-a, v = p-b;
+	return abs(u^v) < EPS && u*v <= 0;
+}
+
 // Check lines intersect!
 // NUM has to be ld
 pt lineLineIntersection(pt a, pt b, pt c, pt d) {
@@ -68,50 +69,30 @@ pt lineLineIntersection(pt a, pt b, pt c, pt d) {
 	return ((c-d)*(a^b) - (a-b)*(c^d)) * (1.0/det);
 }
 
-// dp, dq are directions from p, q
-// intersection at p + t_i dp, for 0 <= i < return value
-// NUM has to be ld
-int segmentIntersection(pt p, pt dp, pt q, pt dq,
-		pt &A, pt &B) {
-	if (abs(dp * dp)<EPS)
-		swap(p,q), swap(dp,dq); // dq=0
-	if (abs(dp * dp)<EPS) {
-		A = p; // dp = dq = 0
-		return p == q;
-	}
+// Check lines intersect!
+// Num has to be ld
+bool segmentIntersection(pt a, pt b, pt c, pt d, pt& res) {
+	res = lineLineIntersection(a, b, c, d);
+	return segmentHasPoint(res,a,b) && segmentHasPoint(res, c, d);
+}
 
-	pt dpq = q-p;
-	NUM c = dp^dq, c0 = dpq^dp, c1 = dpq^dq;
-	if (abs(c) < EPS) { // parallel, dp > 0, dq >= 0
-		if (abs(c0) > EPS) return 0; // not collinear
-		NUM v0 = dpq*dp, v1 = v0 + dq*dp, dp2 = dp*dp;
-		if (v1 < v0) swap(v0, v1);
-
-		v0 = max(v0, NUM(0));
-		v1 = min(v1, dp2);
-
-		A = p + dp * (ld(v0) / dp2);
-		B = p + dp * (ld(v1) / dp2);
-
-		return (v0 <= v1) + (v0 < v1);
-	}
-
-	if (c < 0) {
-		c = -c; c0 = -c0; c1 = -c1;
-	}
-
-	A = p + dp * (ld(c1)/c);
-	return 0 <= min(c0,c1) && max(c0,c1) <= c;
+// Lines can be parallel: segments overlap from seg(start, end)
+// 0 = no intersect, 1 = 1 lines not parallel (res = start), 2 = lines parallel
+// Num has to be ld
+int segmentIntersection(pt a, pt b, pt c, pt d, pt& start, pt& end) {
+	pt d1 = b - a, d2 = d - c;
+	if(abs(d1 ^ d2) > EPS) return segmentIntersection(a, b, c, d, start);
+	if(abs((c - a) ^ d1) > EPS) return 0;
+	if(d1 * d2 < 0) swap(c,d), d2 = d - c;
+	ld s = max((ld)0, (c - a) * d1), e = min(d1 * d1, (d - a) * d1);
+	s /= (d1 * d1), e /= (d1 * d1);
+	if(s > e + EPS) return 0;
+	start = a + d1 * s; end = a + d1 * e; return 2;
 }
 
 // line segment p-q intersect with line A-B.
 // NUM has to be ld!
-pt lineIntersectSeg(pt p, pt q,
-	  pt A, pt B) {
-	ld a = B.y - A.y;
-	ld b = A.x - B.x;
-	ld c = B.x * A.y - A.x * B.y;
-	ld u = fabs(a * p.x + b * p.y + c);
-	ld v = fabs(a * q.x + b * q.y + c);
-	return make_pair((p.x*v + q.x*u) / (u+v),
-				 (p.y*v + q.y*u) / (u+v)); }
+bool lineIntersectSeg(pt p, pt q, pt a, pt b, pt& res) {
+	res = lineLineIntersection(p,q,a,b);
+	return segmentHasPoint(res,p,q);
+}
