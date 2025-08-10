@@ -8,7 +8,7 @@ pt rotate(pt p, ld rad) {
          p.x*sin(rad) + p.y*cos(rad));
 }
 
-// lines are (x,y) s.t. ax + by = c. AND b=0,1.
+// lines are (x,y) s.t. ax + by + c = 0 AND b=0,1.
 struct line { ld a, b, c; };
 
 // gives line through p1, p2

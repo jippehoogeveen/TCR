@@ -19,8 +19,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="Merges zijn leuk">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/convex_hull.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/convex_hull.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/CP/points_lines.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/CP/points_lines.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/CP/polygon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/CP/polygon.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/rmst.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/rmst.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +89,8 @@
       <workItem from="1754500038289" duration="618000" />
       <workItem from="1754550578446" duration="7673000" />
       <workItem from="1754836720687" duration="1606000" />
-      <workItem from="1754838613643" duration="2727000" />
+      <workItem from="1754838613643" duration="3028000" />
+      <workItem from="1754843991716" duration="2269000" />
     </task>
     <servers />
   </component>

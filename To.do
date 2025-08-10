@@ -3,13 +3,11 @@ Gecontroleerd:
 	Sectie 2
 	Sectie 3
 	Sectie 4
-	Sectie 5 tot 5.5
+	Sectie 5
 
 Acties:
 	Template consistent toevoegen
 	Arrays vervangen door vectors
-	Werk RMST bij naar compatibel met main code in geometry
-	In Polygon isConvex bijwerken voor meerdere punten op 1 lijn!
 	Check dat "Google/ChatGPT (telefoon in achterzak)" en "Oortje naar Mike/Reinier" niet in de tcr staan voor wereldfinale!!!!!!!
 	Hashes checken!
 

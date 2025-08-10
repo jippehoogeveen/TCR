@@ -17,13 +17,14 @@ NUM polygonTwiceArea(const poly &P) {
 }
 
 // returns true if we always make the same turn
-// throughout the polygon
+// throughout the polygon (strict)
 bool isConvex(const poly &P) {
 	int n = sz(P);
 	if (n <= 3) return false; // point=2; line=3
 	bool isLeft = ccw(P[0], P[1], P[2]);
 	REP(i, n-2) if (ccw(P[i], P[i+1],
-		  P[(i+2) == n ? 1 : i+2]) != isLeft)
+		  P[(i+2) == n ? 1 : i+2]) != isLeft ||
+		  col(P[i], P[i+1], P[(i+2) == n ? 1 : i+2]))
 		return false; // different sign -> concave
 	return true; } // convex
 
@@ -56,7 +57,7 @@ poly cutPolygon(pt a, pt b, const poly &Q) {
 			P.pb(Q[i]); // Q[i] is left of ab
 		if (left1 * left2 < -EPS)
 			// edge Q[i]--Q[i+1] crosses line ab
-				P.pb(lineIntersectSeg(Q[i], Q[i+1], a, b));
+				P.pb(pt()); lineIntersectSeg(Q[i], Q[i+1], a, b, P.back());
 	}
 	if (!P.empty() && !(P.back() == P.front()))
 		P.pb(P.front()); // make P[0] == P[n-1]
