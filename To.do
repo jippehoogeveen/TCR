@@ -7,7 +7,6 @@ Gecontroleerd:
 Acties:
 	Template consistent toevoegen
 	Arrays vervangen door vectors
-	Suffix automaton splitsen
 	Bekijk Closest Points in detail
 	Werk RMST bij naar compatibel met main code in geometry
 	In Polygon isConvex bijwerken voor meerdere punten op 1 lijn!

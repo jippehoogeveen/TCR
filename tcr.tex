@@ -76,7 +76,7 @@
 % \verbosefalse
 
 \title{TCR}
-\subtitle{\textbf{\QQ} \\ \textit{Thomas van der Plas, Jasper van de Vuurst, Jippe Hoogeveen}}
+\subtitle{\textbf{\QQ} \\ \textit{Thomas van der Plas \& Jippe Hoogeveen}}
 
 \begin{document}
 
@@ -193,7 +193,6 @@ For \texttt{OR}-convolution, use $\quad\,\,\, (x, \, x + y), \quad (x, \, -x + y
 
 Solves a tridiagonal system of linear equations \[ a_i x_{i-1} + b_i x_i + c_i x_{i+1} = d_i \] where $a_1 = c_n = 0$.
 Beware of numerical instability.
-\textbf{Werkt nu niet stabiel!}
 \code{math/tridiagonal.cpp}
 
 \subsection{Number of Integer Points under Line}
@@ -303,16 +302,20 @@ Use one-based indices ($i > 0$)! Stores and updates prefix sums efficiently.
 \subsection{Cartesian tree}
 
 Binary tree derived from a sequence of distinct numbers. To construct the Cartesian tree, set its root to be the minimum number in the sequence, and recursively construct its left and right subtrees from the subsequences before and after this number. It is uniquely defined as a min-heap whose symmetric (in-order) traversal returns the original sequence. RMQ is least common ancestor of left and right.
+\textbf{Geeft nu segmentation faults}
 \code{datastructures/cartesian_tree.cpp}
+
+Construction based on arrays $\mathcal{O}(n)$.
+\code{datastructures/cartesian_tree_construction.cpp}
 
 \subsection{Heap}
 An implementation of a binary heap.
 \code{datastructures/heap.cpp}
 
-\subsection{Dancing Links}
-An implementation of Donald Knuth's Dancing Links data structure. A
-linked list supporting deletion and restoration of elements.
-\code{datastructures/dancing_links.cpp}
+%\subsection{Dancing Links}
+%An implementation of Donald Knuth's Dancing Links data structure. A
+%linked list supporting deletion and restoration of elements.
+%\code{datastructures/dancing_links.cpp}
 
 \subsection{Misof Tree}
 A simple tree data structure for inserting, erasing, and querying the
@@ -325,9 +328,13 @@ nearest neighbor queries.
 NOTE: Not completely stable, occasionally segfaults.
 \code{datastructures/kd_tree.cpp}
 
-\subsection{Sqrt Decomposition}
-Design principle that supports many operations in amortized $\sqrt{n}$ per operation.
-\code{datastructures/sqrt_decomposition.cpp}
+\subsection{Range Tree}
+A 2-dimensional range tree supporting range queries in $O(\log(n))$ time.
+\code{datastructures/range_tree.cpp}
+
+%\subsection{Sqrt Decomposition}
+%Design principle that supports many operations in amortized $\sqrt{n}$ per operation.
+%\code{datastructures/sqrt_decomposition.cpp}
 
 \subsection{Monotonic Queue}
 A queue that supports querying for the minimum element. Useful for sliding window algorithms.
@@ -367,8 +374,8 @@ Be careful with negative edges! Note: |d[i][j]| can grow exponentially, and INFT
 This is only useful if there are edges with weight $w_{i j} < 0$ in the graph.
 \code{graphs/bellmanford.cpp}
 
-\subsubsection{IDA$^\star$ algorithm}
-\code{graphs/idastar.cpp}
+%\subsubsection{IDA$^\star$ algorithm}
+%\code{graphs/idastar.cpp}
 
 \subsection{Maximum Matching}
 \begin{description}
@@ -474,7 +481,7 @@ NOTE: Not sure if it works correctly with disconnected graphs. DOES NOT WORK FOR
 \subsection{Euler Path $O(V+E)$ hopefully}
 Finds an Euler Path (or circuit) in a \emph{directed} graph iff one exists.
 \code{graphs/euler_path.cpp}
-Finds an Euler \emph{cycle} in a \emph{undirected} graph:
+Finds an Euler Path (or circuit) in a \emph{undirected} graph:
 \code{graphs/euler_path_undirected.cpp}
 
 \subsection{Heavy-Light Decomposition}
@@ -500,7 +507,7 @@ Finding a $D$-edge coloring is NP-hard.
 \subsubsection{Minimum Mean Weight Cycle}
 Given a strongly connected directed graph, finds the cycle of minimum
 mean weight. If you have a graph that is not strongly connected, run
-this on each strongly connected component.
+this on each strongly connected component. $\mathcal{O}(EV)$ runtime.
 \code{graphs/min_mean_cycle.cpp}
 
 \subsubsection{Minimum Arborescence}
@@ -509,8 +516,8 @@ total weight so that there is a unique path from the root $r$ to each
 vertex. Returns a vector of size $n$, where the $i$th element is the
 edge for the $i$th vertex. The answer for the root is undefined!
 
-\textbf{$\mathcal{O}(EV)$ runtime and $\mathcal{O}(E)$ memory:}
-\code{graphs/arborescence.cpp}
+%\textbf{$\mathcal{O}(EV)$ runtime and $\mathcal{O}(E)$ memory:}
+%\code{graphs/arborescence.cpp}
 
 \textbf{$\mathcal{O}(V^2 \log V)$ runtime and $\mathcal{O}(E)$ memory:}
 \code{graphs/arborescence-v2.cpp}
@@ -561,13 +568,17 @@ shortest synchronizing word is NP-complete.
 \subsection{Z-algorithm $\mathcal{O}(n)$}
 \code{strings/z_function.cpp}
 
+\subsection{Manacher algorithm $\mathcal{O}(n)$}
+Returns longest palindrome centered at letter $i$ (index $2 \cdot i$) or between letters $i$ and $i + 1$ (index $2 \cdot i + 1$).
+\code{strings/manacher.cpp}
+
 \subsection{Suffix array $\mathcal{O}(n \log{n})$}
 Lexicographically sorts the cyclic shifts of $S$ where $p[0]$ is the index of the smallest string, etc. Efficient lookup of all indices where a substring occurs.
 \code{strings/suffixarray.cpp}
 
-\subsection{Longest Common Subsequence $\mathcal{O}(n^{2})$}
-\textsc{Substring}: \textit{consecutive characters}\,!!!
-\code{strings/lcs.cpp}
+%\subsection{Longest Common Subsequence $\mathcal{O}(n^{2})$}
+%\textsc{Substring}: \textit{consecutive characters}\,!!!
+%\code{strings/lcs.cpp}
 
 \subsection{Levenshtein Distance $\mathcal{O}(n^{2})$}
 Minimal number of insertions, removals and edits required to transform one string in the other.
@@ -597,6 +608,9 @@ construction. The automata itself is a DAG therefore suitable for DP,
 examples are counting unique substrings, occurrences of substrings and
 suffix.
 \code{strings/suffix_automaton.cpp}
+
+DP examples
+\code{strings/suffix_automaton_dp.cpp}
 
 \subsection{Hashing}
 Modulus should be a large prime. Can also use multiple instances with
@@ -671,8 +685,8 @@ Let $a = (a_x, a_y)$ and $b = (b_x, b_y)$ be two-dimensional vectors.
 \end{myitemize}
 
 \section{Miscellaneous}
-\subsection{Binary search $\mathcal{O}(\log (hi - lo))$}
-\code{binary_search.cpp}
+%\subsection{Binary search $\mathcal{O}(\log (hi - lo))$}
+%\code{binary_search.cpp}
 
 \subsection{Fast Fourier Transform $\mathcal{O}(n \log n)$}
 Given two polynomials $A(x) = a_0 + a_1 x + \dots + a_{n/2} x^{n/2}$ and $B(x) = b_0 + b_1 x + \dots + b_{n/2} x^{n/2}$, FFT calculates all coefficients of $C(x) = A(x) \cdot B(x) = c_0 + c_1 x + \dots c_{n} x^{n}$, with $c_i = \sum_{j=0}^{i} a_j b_{i-j}$.
@@ -920,6 +934,8 @@ Let $p_j$ be the time task $j$ takes on a machine, $d_j$ the deadline, $C_j$ the
 
 \subsection{Solution Ideas}
 \begin{myitemize}
+        \item Google/ChatGPT (telefoon in achterzak)
+        \item Oortje naar Mike/Reinier
 	\item Dynamic Programming
 		\begin{myitemize}
 			\item Parsing CFGs: CYK Algorithm
