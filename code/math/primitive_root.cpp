@@ -5,8 +5,8 @@ ll primitive_root(ll m) {
 			div.pb(i);
 			div.pb(phi/i);
 		}
-	rep(x,2,m) {
-		bool ok = true;//gcd-check
+	rep(x,2,m) {//skip if gcd(x, m) != 1
+		bool ok = true;
 		for (ll d : div) if (mod_pow(x, d, m) == 1)
 			{ ok = false; break; }
 		if (ok) return x;

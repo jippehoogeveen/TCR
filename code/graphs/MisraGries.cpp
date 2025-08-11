@@ -7,15 +7,15 @@ struct MisraGries {
 	MisraGries(int n) : N(n), G(n) {}
 	// add an undirected edge, NO DUPLICATES ALLOWED
 	void addEdge(int u, int v) {
-		G[u].pb({v, -1, (int) G[v].size()});
-		G[v].pb({u, -1, (int) G[u].size()-1});
+		G[u].pb({v, -1, sz(G[v])});
+		G[v].pb({u, -1, sz(G[u]) - 1});
 	}
 
 	void color(int v, int i) {
 		vi fan = { i };
-		vb used(G[v].size());
+		vb used(sz(G[v]));
 		used[i] = true;
-		for (int j = 0; j < (int) G[v].size(); j++)
+		for (int j = 0; j < sz(G[v]); j++)
 			if (!used[j] && G[v][j].col >= 0 && F[G[v][fan.back()].to][G[v][j].col] < 0)
 				used[j] = true, fan.pb(j), j = -1;
 		int c = 0; while (F[v][c] >= 0) c++;
@@ -40,9 +40,9 @@ struct MisraGries {
 	}
 	// finds a K-edge-coloring
 	void color() {
-		REP(v, N) K = max(K, (int) G[v].size() + 1);
+		REP(v, N) K = max(K, sz(G[v]) + 1);
 		F = vvi(N, vi(K, -1));
-		REP(v, N) for (int i = G[v].size(); i--; )
+		REP(v, N) for (int i = sz(G[v]); i--; )
 			if (G[v][i].col < 0) color(v, i);
 	}
 };

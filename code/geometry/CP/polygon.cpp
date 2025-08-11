@@ -1,5 +1,3 @@
-typedef vector<pt> poly;
-
 // returns the perimeter: sum of Euclidean distances
 // of consecutive line segments (polygon edges)
 ld perimeter(const poly &P) {

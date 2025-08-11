@@ -1,6 +1,7 @@
 const ld EPS = 1e-7, PI = acos(-1.0);
 typedef ld NUM; // EITHER ld OR ll
 typedef pair<NUM, NUM> pt;
+typedef vector<pt> poly;
 
 pt operator+(pt p,pt q){ return {p.x+q.x,p.y+q.y}; }
 pt operator-(pt p,pt q){ return {p.x-q.x,p.y-q.y}; }

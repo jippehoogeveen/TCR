@@ -1,4 +1,4 @@
-vector<pt> pts;
+poly pts;
 
 struct byY {
 	bool operator()(int a, int b) const { return pts[a].y < pts[b].y; }

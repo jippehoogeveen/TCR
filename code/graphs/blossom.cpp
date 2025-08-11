@@ -75,13 +75,13 @@ vii max_matching(const vvi &adj) {
   marked = vb(n);
   emarked = vvb(n,vb(n));
   S = vi(n);
-  vi m(size(adj), -1), ap; vii res, es;
-  REP(i,size(adj)) for(ll it:adj[i]) es.eb(i,it);
+  vi m(sz(adj), -1), ap; vii res, es;
+  REP(i,sz(adj)) for(ll it:adj[i]) es.eb(i,it);
   random_shuffle(all(es));
   for(ii it: es) if (m[it.x] == -1 && m[it.y] == -1)
     m[it.x] = it.y, m[it.y] = it.x;
   do { ap = find_augmenting_path(adj, m);
-       REP(i,size(ap)) m[m[ap[i^1]] = ap[i]] = ap[i^1];
+       REP(i,sz(ap)) m[m[ap[i^1]] = ap[i]] = ap[i^1];
   } while (!ap.empty());
-  REP(i,size(m)) if (i < m[i]) res.eb(i, m[i]);
+  REP(i,sz(m)) if (i < m[i]) res.eb(i, m[i]);
   return res; }

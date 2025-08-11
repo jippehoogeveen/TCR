@@ -1,8 +1,8 @@
 // the convex hull consists of: { pts[ret[0]], pts[ret[1]], ... pts[ret.back()] } in counterclockwise order
-vi convexHull(const vector<pt> &pts) {
+vi convexHull(const poly &pts) {
 	if (pts.empty()) return vi();
 	vi ret, ord;
-	int n = pts.size(), st = min_element(all(pts)) - pts.begin();
+	int n = sz(pts), st = min_element(all(pts)) - pts.begin();
 	REP(i, n)
 		if (pts[i] != pts[st]) ord.pb(i);
 	sort(all(ord), [&pts,&st] (int a, int b) {

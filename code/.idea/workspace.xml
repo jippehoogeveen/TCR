@@ -18,10 +18,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="Merges zijn leuk">
+      <change beforePath="$PROJECT_DIR$/../To.do" beforeDir="false" afterPath="$PROJECT_DIR$/../To.do" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/CP/points_lines.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/CP/points_lines.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datastructures/kd_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/kd_tree.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/geometry/CP/polygon.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/CP/polygon.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/rmst.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/rmst.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/closest_points.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/closest_points.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/convex_hull.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/convex_hull.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/delaunay.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/delaunay.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geometry/rotating_calipers.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/rotating_calipers.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/MisraGries.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/MisraGries.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/arborescence-v2.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/arborescence-v2.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/blossom.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/blossom.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/cut_points_and_bridges.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/cut_points_and_bridges.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/dinic.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/dinic.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/min_mean_cycle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/min_mean_cycle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/mincostmaxflow.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/mincostmaxflow.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/fft.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/math/fft.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/math.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/math/math.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/primitive_root.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/math/primitive_root.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/tridiagonal.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/math/tridiagonal.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matrix_solver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/matrix_solver.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimum_assignment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/minimum_assignment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other/berlekamp-massey.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/other/berlekamp-massey.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/other/simplex.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/other/simplex.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/edit_dist.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/edit_dist.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/strings/kmp.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/kmp.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +112,9 @@
       <workItem from="1754550578446" duration="7673000" />
       <workItem from="1754836720687" duration="1606000" />
       <workItem from="1754838613643" duration="3028000" />
-      <workItem from="1754843991716" duration="2269000" />
+      <workItem from="1754843991716" duration="2374000" />
+      <workItem from="1754915126729" duration="2564000" />
+      <workItem from="1754927207219" duration="4604000" />
     </task>
     <servers />
   </component>

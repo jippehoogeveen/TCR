@@ -2,7 +2,7 @@ const ld EPS = 1e-9;
 struct LPSolver {
  int m, n; vi B, N; vvd D;
  LPSolver(const vvd &A, const vd &b, const vd &c) :
-     m(b.size()), n(c.size()),
+     m(sz(b)), n(sz(c)),
      N(n + 1), B(m), D(m + 2, vd(n + 2)) {
   REP(i, m) REP(j, n) D[i][j] = A[i][j];
   REP(i, m) { B[i] = n + i; D[i][n] = -1;
@@ -11,7 +11,7 @@ struct LPSolver {
   N[n] = -1; D[m + 1][n] = 1;
  }
  void Pivot(int r, int s) {
-  double inv = 1.0 / D[r][s];
+  ld inv = 1.0 / D[r][s];
   REP(i, m+2) if (i != r) REP(j, n+2) if (j != s)
     D[i][j] -= D[r][j] * D[i][s] * inv;
   REP(j, n+2) if (j != s) D[r][j] *= inv;

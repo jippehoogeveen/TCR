@@ -17,7 +17,7 @@ vi BerlekampMassey(const vi &s, ll mod) {
 		L = i + 1 - L;
 		B = T; b = d; m = 0;
 	}
-	C.resize(L + 1);
+	C.rs(L + 1);
 	C.erase(C.begin());
 	for (auto &x : C) x = (mod - x) % mod;
 	return C;
@@ -34,7 +34,7 @@ ll lin_rec(const vi &A, const vi &C, ll k, ll mod){
 			res[i+j] = (res[i+j] + a[i]*b[j]) % mod;
 		for (int i = 2*n; i > n; --i) REP(j,n)
 			res[i-1-j] = (res[i-1-j] + res[i]*C[j]) % mod;
-		res.resize(n + 1);
+		res.rs(n + 1);
 		return res;
 	};
 	vi pol(n + 1), e(pol);

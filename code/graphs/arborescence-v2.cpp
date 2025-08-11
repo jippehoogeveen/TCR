@@ -1,11 +1,7 @@
-const ll oo = 1e9, MAXN = 4024;
-
-// N = #V, R = root
+const ll oo = 1e9;
 int N, R;
-// for each node a list of pairs (predecessor, cost):
-vii g[MAXN];
-int pred[MAXN], label[MAXN], node[MAXN];
-ll helper[MAXN];
+vector<vii> g;
+vi pred, label, node, helper;
 
 int get_node(int n) {
 	return node[n] == n ? n :
@@ -34,7 +30,7 @@ ll cycle(vi &active, int n, int &cend) {
 	if (cend == n) {
 		int F = find(all(active), n)-active.begin();
 		vi todo(active.begin() + F, active.end());
-		active.resize(F);
+		active.rs(F);
 		vii newg;
 		for (auto i: todo) node[i] = n;
 		for (auto i: todo) for(auto &ed : g[i])
@@ -62,9 +58,12 @@ ll cycle(vi &active, int n, int &cend) {
 
 // Calculates value of minimal arborescence from R,
 // assuming it exists.
-// NOTE: N, R must be initialized at this point!!!
-// Algo changes g!!
-ll min_arbor() {
+// adj[i] contains (j, v) with edge i -> j with value v
+// pred[i] is parent in arborescence
+ll min_arbor(vector<vii>& adj, int r) {
+	N = sz(adj); R = r; g = vector<vii>(N);
+	REP(i, N) for(ii p : adj[i]) g[p.x].eb(i,p.y);
+	pred = label = node = helper = vi(N);
 	ll res = 0;
 	REP(i, N) {
 		node[i] = i;

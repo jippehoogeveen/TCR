@@ -1,5 +1,5 @@
-const int MAXN = 5000;
-int low[MAXN], num[MAXN], curnum;
+vi low, num;
+int curnum;
 
 void dfs(vvi &adj, vi &cp, vii &bs, int u, int p) {
   low[u] = num[u] = curnum++;
@@ -18,9 +18,9 @@ void dfs(vvi &adj, vi &cp, vii &bs, int u, int p) {
 }
 
 pair<vi,vii> cut_points_and_bridges(vvi &adj) {
-  int n = size(adj);
+  int n = sz(adj);
   vi cp; vii bs;
-  memset(num, -1, n << 2);
+  num = vi(n, -1); low = vi(n);
   curnum = 0;
   REP(i,n) if (num[i] < 0) dfs(adj, cp, bs, i, -1);
   return make_pair(cp, bs);

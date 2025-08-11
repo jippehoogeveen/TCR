@@ -1,5 +1,5 @@
 double min_mean_cycle(vector<vector<pair<int,ld>>> adj){
-  int n = size(adj); ld mn = INFINITY;
+  int n = sz(adj); ld mn = INFINITY;
   vvd arr(n+1, vd(n, mn));
   arr[0][0] = 0;
   rep(k,1,n+1) REP(j,n) for(auto p : adj[j])

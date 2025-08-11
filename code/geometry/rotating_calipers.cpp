@@ -1,6 +1,6 @@
 // returns the max squared distance between 2 points in hull
-NUM maxDist2(vector<pt> &hull) {
-	int n = hull.size(), b = 1;
+NUM maxDist2(poly &hull) {
+	int n = sz(hull), b = 1;
 	if (n <= 1) return 0;
 	NUM ret = 0;
 	for (int a = 0; a < n; a++) {
@@ -11,8 +11,8 @@ NUM maxDist2(vector<pt> &hull) {
 	return ret;
 }
 // returns the width of the convex hull
-ld width(vector<pt> &hull) {
-	int n = hull.size(), b = 1;
+ld width(poly &hull) {
+	int n = sz(hull), b = 1;
 	if (n <= 1) return 0;
 	ld ret = 1e20;
 	for (int a = 0; a < n; a++) {

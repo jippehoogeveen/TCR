@@ -44,7 +44,7 @@ template <int K> struct kd_tree {
 
   kd_tree() : root(NULL) { }
   kd_tree(vector<pt> pts) {
-    root = construct(pts, 0, size(pts) - 1, 0); }
+    root = construct(pts, 0, sz(pts) - 1, 0); }
   node* construct(vector<pt> &pts, int fr, int to, int c) {
     if (fr > to) return NULL;
     int mid = fr + (to-fr) / 2;

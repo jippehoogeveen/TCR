@@ -1,15 +1,14 @@
-Gecontroleerd:
+Gecontroleerd: Alles
 	Sectie 1
 	Sectie 2
 	Sectie 3
 	Sectie 4
 	Sectie 5
+	Sectie 6
 
 Acties:
-	Template consistent toevoegen
-	Arrays vervangen door vectors
-	Check dat "Google/ChatGPT (telefoon in achterzak)" en "Oortje naar Mike/Reinier" niet in de tcr staan voor wereldfinale!!!!!!!
-	Hashes checken!
+	Hashes!
+	Arrays vervangen door vectors (suffix tree moet nog)
 
 Huilen:
 	Huilen om tridiagonal matrix (test beter om niet meer te huilen): huilen teruggedraaid

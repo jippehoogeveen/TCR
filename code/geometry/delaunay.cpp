@@ -69,7 +69,7 @@ bool in_circle(pt a, pt b, pt c, pt d) {
 }
 
 pair<Quad*, Quad*> build_tr(int l, int r,
-		vector<pt>& p) {
+		poly& p) {
 	if (r - l + 1 == 2) {
 		Quad* res = make_edge(p[l], p[r]);
 		return make_pair(res, res->rev());
@@ -129,7 +129,7 @@ pair<Quad*, Quad*> build_tr(int l, int r,
 	return make_pair(ldo, rdo);
 }
 
-vector<tuple<pt, pt, pt>> delaunay(vector<pt> p) {
+vector<tuple<pt, pt, pt>> delaunay(poly p) {
 	sort(all(p), [](const pt& a, const pt& b) {
 		return a.x < b.x ||
 				(a.x == b.x && a.y < b.y);

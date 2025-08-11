@@ -12,7 +12,7 @@ inline void addEdge(int u, int v, ll c, ll w) {
 
 void spBF(int s) {
 	D = vi(V,LLONG_MAX); D[s] = 0;
-	for (int ng = g.size(), _ = V; _--; ) {
+	for (int ng = sz(g), _ = V; _--; ) {
 		bool ok = false;
 		for (int i = 0; i < ng; i++)
 			if (D[g[i].x] != LLONG_MAX && g[i].f < g[i].c && D[g[i].x] + g[i].w < D[g[i].y]) {

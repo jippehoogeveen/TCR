@@ -1,7 +1,7 @@
 int sign(ll x) { return (x > 0) - (x < 0); }
 
 ll lcm(ll a, ll b) { return a/gcd(a, b)*b; }
-ll mod(ll a, ll b) { return (a%=b) < 0 ? a+b : a; }
+ll mod(ll a, ll b) { return (a % b + b) % b; }
 
 // ab % m for m <= 4e18 in O(log b)
 ll mod_mul(ll a, ll b, ll m) {
@@ -48,8 +48,8 @@ pair<ll, ll> crt(ll a, ll n, ll b, ll m) {
 // phi[i] = #{ 0 < j <= i | gcd(i, j) = 1 } sieve
 vi totient(int N) {
 	vi phi(N);
-	for (int i = 0; i < N; i++) phi[i] = i;
-	for (int i = 2; i < N; i++) if (phi[i] == i)
+	REP(i, N) phi[i] = i;
+	rep(i,2,N) if (phi[i] == i)
 		for (int j = i; j < N; j+=i) phi[j] -= phi[j]/i;
 	return phi;
 }
@@ -72,7 +72,7 @@ ll lucas(ll n, ll k, ll p) {
 	while (n) {
 		ll np = n % p, kp = k % p;
 		if (np < kp) return 0;
-		ans = mod(ans * binom(np, kp, p), p); // (np C kp)
+		ans = mod(ans * binom(np, kp, p), p);
 		n /= p; k /= p;
 	}
 	return ans;
