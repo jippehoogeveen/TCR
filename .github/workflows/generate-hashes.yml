@@ -34,7 +34,7 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           
-          git add ./**/*.hash
+          git add .
           
           git pull
           git commit -m "Auto-generate hash files [skip ci]"
