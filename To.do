@@ -7,7 +7,7 @@ Gecontroleerd: Alles
 	Sectie 6
 
 Acties:
-	Hashes!
+	Hashes! (zou nu automatisch moeten gaan)
 	Arrays vervangen door vectors (suffix tree moet nog)
 
 Huilen:
