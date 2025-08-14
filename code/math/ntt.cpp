@@ -1,53 +1,29 @@
-#include "../mathematics/primitive_root.cpp"
-int mod = 998244353, g = primitive_root(mod),
-  ginv = mod_pow<ll>(g, mod-2, mod),
-  inv2 = mod_pow<ll>(2, mod-2, mod);
-#define MAXN (1<<22)
-struct Num {
-  int x;
-  Num(ll _x=0) { x = (_x%mod+mod)%mod; }
-  Num operator +(const Num &b) { return x + b.x; }
-  Num operator -(const Num &b) const { return x - b.x; }
-  Num operator *(const Num &b) const { return (ll)x * b.x; }
-  Num operator /(const Num &b) const {
-    return (ll)x * b.inv().x; }
-  Num inv() const { return mod_pow<ll>((ll)x, mod-2, mod); }
-  Num pow(int p) const { return mod_pow<ll>((ll)x, p, mod); }
-} T1[MAXN], T2[MAXN];
-void ntt(Num x[], int n, bool inv = false) {
-  Num z = inv ? ginv : g;
-  z = z.pow((mod - 1) / n);
-  for (ll i = 0, j = 0; i < n; i++) {
-    if (i < j) swap(x[i], x[j]);
-    ll k = n>>1;
-    while (1 <= k && k <= j) j -= k, k >>= 1;
-    j += k; }
-  for (int mx = 1, p = n/2; mx < n; mx <<= 1, p >>= 1) {
-    Num wp = z.pow(p), w = 1;
-    for (int k = 0; k < mx; k++, w = w*wp) {
-      for (int i = k; i < n; i += mx << 1) {
-        Num t = x[i + mx] * w;
-        x[i + mx] = x[i] - t;
-        x[i] = x[i] + t; } } }
-  if (inv) {
-    Num ni = Num(n).inv();
-    rep(i,0,n) { x[i] = x[i] * ni; } } }
-void inv(Num x[], Num y[], int l) {
-  if (l == 1) { y[0] = x[0].inv(); return; }
-  inv(x, y, l>>1);
-  // NOTE: maybe l<<2 instead of l<<1
-  rep(i,l>>1,l<<1) T1[i] = y[i] = 0;
-  rep(i,0,l) T1[i] = x[i];
-  ntt(T1, l<<1); ntt(y, l<<1);
-  rep(i,0,l<<1) y[i] = y[i]*2 - T1[i] * y[i] * y[i];
-  ntt(y, l<<1, true); }
-void sqrt(Num x[], Num y[], int l) {
-  if (l == 1) { assert(x[0].x == 1); y[0] = 1; return; }
-  sqrt(x, y, l>>1);
-  inv(y, T2, l>>1);
-  rep(i,l>>1,l<<1) T1[i] = T2[i] = 0;
-  rep(i,0,l) T1[i] = x[i];
-  ntt(T2, l<<1); ntt(T1, l<<1);
-  rep(i,0,l<<1) T2[i] = T1[i] * T2[i];
-  ntt(T2, l<<1, true);
-  rep(i,0,l) y[i] = (y[i] + T2[i]) * inv2; }
+//include mod_pow
+const ll mod = 998244353, g = 2;//g is primitive root of mod
+
+vi rev, rt;
+ll inv(ll x) { return mod_pow(x, mod - 2, mod);}
+void ntt(vi &A) {
+  REP(i, sz(A)) if (i < rev[i]) swap(A[i], A[rev[i]]);
+  for (int k = 1; k < sz(A); k *= 2)
+    for (int i = 0; i < sz(A); i += 2*k) REP(j, k) {
+      ll t = rt[j + k] * A[i + j + k];
+      A[i + j + k] = (A[i + j] - t + mod * mod) % mod;
+      A[i + j] = (A[i + j] + t) % mod;
+    }
+}
+void multiply(vi &A, vi &B) { //A = A * B
+  ll logn; for(logn = 1; (1 << logn) < sz(A); logn++);
+  ll n = 1 << logn; rev = rt = vi(n);
+  A.rs(n), B.rs(n);
+  rev[0] = 0; rt[1] = 1;
+  REP(i, n) rev[i] = (rev[i/2] | (i&1)<<logn)/2;
+  for (int i = 1; (1 << i) < n; ++i) {
+    int k = 1<<i;
+    ll z = mod_pow(g,(mod - 1) >> (i + 2),mod);
+    rep(i, k/2, k) rt[2*i] = rt[i], rt[2*i+1] = (rt[i] * z) % mod;
+  }
+  ntt(A); ntt(B);
+  REP(i, n) A[i] = (((A[i] * B[i]) % mod) * inv(n)) % mod;
+  REP(i,n) rt[i] = inv(rt[i]);
+  ntt(A); }
