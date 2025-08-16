@@ -309,7 +309,6 @@ Use one-based indices ($i > 0$)! Stores and updates prefix sums efficiently.
 \subsection{Cartesian tree}
 
 Binary tree derived from a sequence of distinct numbers. To construct the Cartesian tree, set its root to be the minimum number in the sequence, and recursively construct its left and right subtrees from the subsequences before and after this number. It is uniquely defined as a min-heap whose symmetric (in-order) traversal returns the original sequence. RMQ is least common ancestor of left and right.
-\textbf{Geeft nu segmentation faults}
 \code{datastructures/cartesian_tree.cpp}
 
 Construction based on arrays $\mathcal{O}(n)$.

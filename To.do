@@ -15,4 +15,3 @@ Huilen:
 		- Uniform random werk zo ongeveer altijd
 		- Exponentiëel werkt tot n = 5000
 	Huilen om gomory hu tree (internet)
-	Huilen om cartesian tree: je krijgt na 2 keer insert een segmentation fault (volgens mij gaat het mis bij dat het geheugen wordt vrijgegeven).
