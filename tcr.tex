@@ -163,6 +163,9 @@ template.py
 	\item Controleer op off-by-one-errors (in indices of lus-grenzen)?
 \end{myitemize}
 
+\textbf{Basics}
+\code{basics.cpp}
+
 \textbf{Detecting overflow:}
 This GNU builtin checks for over- and underflow. Result is in \texttt{res} if successful:
 \code{other/overflow.cpp}
@@ -222,8 +225,7 @@ does not kill $0$ on first pass.
 
 \begin{myitemize}
 	\item \textbf{Prime numbers}:
-
-	$1031$, $32771$, $1048583$, $33554467$, $9982451653$, $1073741827$, $34359738421$, $1099511627791$, $35184372088891$, $1125899906842679$, $36028797018963971$.
+	$1031$, $32771$, $1048583$, $33554467$, $998244353$, $9982451653$, $1073741827$, $34359738421$, $1099511627791$, $35184372088891$, $1125899906842679$, $36028797018963971$, $10^{18} + 7$.
 
 	$10^3 + \{-9,-3,9,13\}$, $10^6 + \{-17,3,33\}$, $10^9+ \{7,9,21,33,87\}$.
 
@@ -254,7 +256,8 @@ does not kill $0$ on first pass.
 	It only exists when $n$ is $2, 4, p^k, 2p^k$, where $p$ odd prime.
 	If $g$ is a primitive root, all primitive roots are of the form $g^k$
 	where $k,\phi(p)$ are coprime (hence there are $\phi(\phi(p))$ primitive roots). Examples:\\
-    $10^9 + 7 : 5$,\ $10^9 + 9 : 13$,\ $10^9 + 21 : 2$,\ $10^9 + 33 : 5$,\ $10^9 + 87 : 3$,\ $36028797018963971 : 2$,\ $(10^9 + 7)^2 : 5$
+    $998244352 = 2^{23} \cdot 7 \cdot 17 + 1: 2$, $2.013.265.921 = 2^{27} \cdot 3 \cdot 5 + 1 : 31$,
+    $10^9 + 7 : 5$,\ $10^9 + 9 : 13$,\ $10^9 + 21 : 2$,\ $10^9 + 33 : 5$,\ $10^9 + 87 : 3$,\ $36028797018963971 : 2$, $10^{18} + 7 : 5$,\ $(10^9 + 7)^2 : 5$
 	
 \item \textbf{Maximum number of divisors:} \\
 \\
@@ -306,9 +309,9 @@ Use one-based indices ($i > 0$)! Stores and updates prefix sums efficiently.
 %Use this easy implementation for a map:
 %\code{datastructures/avl_tree_map.cpp}
 
-\subsection{Cartesian tree}
+\subsection{Cartesian tree/Treap}
 
-Binary tree derived from a sequence of distinct numbers. To construct the Cartesian tree, set its root to be the minimum number in the sequence, and recursively construct its left and right subtrees from the subsequences before and after this number. It is uniquely defined as a min-heap whose symmetric (in-order) traversal returns the original sequence. RMQ is least common ancestor of left and right.
+Binary tree derived from a sequence of points. The root is the point with smallest $y$-coordinate and contains the points with smaller $x$ in its left subtree (and larger $x$ in right subtree). \textbf{Can be used as treap (= BST on $x$)}, by adding random $y$ to each point. Additional information can be updated in augment. Can be made persistent by changing the update instructions in split, merge and erase to creating new nodes (\textbf{use keyword new}). 
 \code{datastructures/cartesian_tree.cpp}
 
 Construction based on arrays $\mathcal{O}(n)$.
@@ -629,9 +632,9 @@ different moduli to minimize chance of collision.
 \subsection{Convex Hull $\mathcal{O}(n \log n)$}
 \code{geometry/convex_hull.cpp}
 
-\subsection{Rotating Calipers $\mathcal{O}(n)$}
-Finds the longest distance between two points in a convex hull.
-\code{geometry/rotating_calipers.cpp}
+%\subsection{Rotating Calipers $\mathcal{O}(n)$}
+%Finds the longest distance between two points in a convex hull.
+%\code{geometry/rotating_calipers.cpp}
 
 \subsection{Closest points $\mathcal{O}(n \log n)$}
 \code{geometry/closest_points.cpp}
@@ -697,6 +700,9 @@ Let $a = (a_x, a_y)$ and $b = (b_x, b_y)$ be two-dimensional vectors.
 \subsection{Fast Fourier Transform $\mathcal{O}(n \log n)$}
 Given two polynomials $A(x) = a_0 + a_1 x + \dots + a_{n/2} x^{n/2}$ and $B(x) = b_0 + b_1 x + \dots + b_{n/2} x^{n/2}$, FFT calculates all coefficients of $C(x) = A(x) \cdot B(x) = c_0 + c_1 x + \dots c_{n} x^{n}$, with $c_i = \sum_{j=0}^{i} a_j b_{i-j}$.
 \code{math/fft.cpp}
+
+NTT $\mathcal{O}(n\log(n))$. Requires $2 ^{e_2(mod - 1)} \geq n$. Can be calculated exact by taking (multiple) large primes as modulus (and combining them with CRT).
+\code{math/ntt.cpp}
 
 \subsection{Minimum Assignment (Hungarian Algorithm) $\mathcal{O}(n^{3})$}
 \code{minimum_assignment.cpp}
@@ -870,7 +876,6 @@ Let $p_j$ be the time task $j$ takes on a machine, $d_j$ the deadline, $C_j$ the
 	\item Two machines (all tasks have to be done first on machine 1, then on 2, or vice versa), minimise $C_{\max}$: let $J_{12}$ be the tasks that have to be done first on machine $1$, then on $2$ and similar $J_{21}$. Use the above algorithm to find $S_{12},S_{21}$ optimal for $J_{12},J_{21}$. Then optimal is $S_{12},S_{21}$ for M1 and $S_{21},S_{12}$ for M2. (If there are tasks that have to be done on only one machine, do them in the middle.)
 \end{myitemize}
 
-\columnbreak
 \section{Debugging Tips}
 \begin{myitemize}
 	\item Stack overflow? Recursive DFS on tree that is actually a long path?
@@ -928,7 +933,7 @@ Let $p_j$ be the time task $j$ takes on a machine, $d_j$ the deadline, $C_j$ the
 				\[ C[a][c] + C[b][d] \leq C[a][d] + C[b][c], (a\leq b\leq c\leq d) \quad (\text{QI}) \]
 			\item $O(kn^2)$ to $O(kn\log{n})$
 		\end{myitemize}
-		\code{divco.cpp}
+		%\code{divco.cpp}
 	\item Knuth
 		\begin{myitemize}
 			\item $\mathrm{dp}[i][j] = \min_{i<k<j}\{\mathrm{dp}[i][k] + \mathrm{dp}[k][j] + C[i][j]\}$
