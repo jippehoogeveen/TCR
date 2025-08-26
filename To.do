@@ -8,10 +8,9 @@ Gecontroleerd: Alles
 
 Acties:
 	Hashes! (zou nu automatisch moeten gaan)
-	Arrays vervangen door vectors (suffix tree moet nog)
+	Check min cut werkt voor Gomory Hu tree
 
 Huilen:
 	Huilen om tridiagonal matrix (test beter om niet meer te huilen): huilen teruggedraaid
 		- Uniform random werk zo ongeveer altijd
 		- Exponentiëel werkt tot n = 5000
-	Huilen om gomory hu tree (internet)

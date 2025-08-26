@@ -18,8 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="Merges zijn leuk">
+      <change beforePath="$PROJECT_DIR$/../To.do" beforeDir="false" afterPath="$PROJECT_DIR$/../To.do" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphs/gomory_hu_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/gomory_hu_tree.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +104,7 @@
       <workItem from="1755598496556" duration="604000" />
       <workItem from="1755707678355" duration="1000" />
       <workItem from="1755849170490" duration="2000" />
-      <workItem from="1756196345964" duration="1747000" />
+      <workItem from="1756196345964" duration="3108000" />
     </task>
     <servers />
   </component>

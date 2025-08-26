@@ -1,5 +1,5 @@
 auto comp = [](T i, T j){return i < j;}; //strictly smaller!
-sort(v.begin(), v.end(), comp); // Sort vector v.
+sort(v.begin(), v.end(), comp); // Sort vector v
 priority_queue<T, vector<T>, decltype(comp)> q(comp); // Max heap.
 set<T, decltype(comp)> s(comp); // Balanced binary search tree.
 map<T, S, decltype(comp)> m(comp); // Balanced binary search tree map with key T and value S.
