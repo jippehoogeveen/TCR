@@ -913,6 +913,16 @@ Let $p_j$ be the time task $j$ takes on a machine, $d_j$ the deadline, $C_j$ the
 		\begin{itemize}
 			\item Is it actually Memory Limit Exceeded?
 		\end{itemize}
+	\item TLE?
+	\begin{myitemize}
+		\item Replace endl with newline
+		\item Replace vector with const size array
+		\item \#pragma GCC optimize("O3,unroll-loops") \#pragma GCC target("avx2,bmi,bmi2,popcnt")
+		\item for loop with const upper bound $N \leq 1000 \rightarrow$ \#pragma GCC unroll($N$)
+		\item Replace conditional assignment with $a = c \cdot t + !c \cdot f$ / ternary when $t$/$f$ computationally expensive 
+		\item Reduce modulo usage / replace with with bit operations 
+		\item Still not enough? Try to reduce asymptotic runtime
+	\end{myitemize}
 \end{myitemize}
 
 \subsection{Dynamic programming optimizations}
