@@ -279,21 +279,20 @@ does not kill $0$ on first pass.
 \code{datastructures/order_statistic.cc}
 
 \subsection{Segment tree $\mathcal{O}(\log n)$}
+All intervals are right closed $[\ell,r]$.
 
 % \subsection{segment tree $\mathcal{O}(\log n)$}
 %\subsubsection{Standard segment tree}
 %\code{datastructures/segment_tree.cpp}
 
 % \subsection{Lazy segment tree $\mathcal{O}(\log n)$}
-\subsubsection{Lazy segment tree} Allows for efficient range updates.~\\
+\subsubsection{Lazy segment tree} Allows for efficient range updates.
 
-\textbf{Be careful}: all intervals are right-closed $[\ell,r]$.
 \code{datastructures/lazy_segment_tree.cpp}
 
 % \subsection{Lazy segment tree $\mathcal{O}(\log n)$}
-\subsubsection{Persistent segment tree} Keeps track of older versions of segment tree by id.~\\
+\subsubsection{Persistent segment tree} Keeps track of older versions of segment tree by id.
 
-\textbf{Be careful}: all intervals are right-closed $[\ell,r]$, including build.
 \code{datastructures/persistent_segment_tree.cpp}
 
 \subsection{Binary Indexed Tree $\mathcal{O}(\log n)$}
@@ -373,15 +372,15 @@ Tree where you can add pseudolines in $O(\log(n))$ and query the maximum line fo
 \subsection{Shortest path}
 
 \subsubsection{Dijkstra $\mathcal{O}(|E|\log{|V|})$}
-\code{graphs/dijkstra.cpp}
+%\code{graphs/dijkstra.cpp}
 
-\subsubsection{Floyd-Warshall $\mathcal{O}(V^{3})$}
+\subsubsection{Floyd-Warshall $\mathcal{O}(V^{3})$ all pairs}
 Be careful with negative edges! Note: |d[i][j]| can grow exponentially, and INFTY + negative < INFTY.
 \code{graphs/floydwarshall.cpp}
 
 \subsubsection{Bellman Ford $\mathcal{O}(V E)$}
 This is only useful if there are edges with weight $w_{i j} < 0$ in the graph.
-\code{graphs/bellmanford.cpp}
+%\code{graphs/bellmanford.cpp}
 
 %\subsubsection{IDA$^\star$ algorithm}
 %\code{graphs/idastar.cpp}
@@ -477,7 +476,7 @@ Find the cheapest possible way of sending a certain amount of flow through a flo
 An implementation of the Gomory-Hu Tree. The spanning tree is constructed using Gusfield's algorithm
 in $O(|V| ^ 2)$ plus $|V|-1$ times the time it takes to calculate the maximum flow.
 If Dinic's algorithm is used to calculate the max flow, the running time is $O(|V|^3|E|)$.
-NOTE: Not sure if it works correctly with disconnected graphs. DOES NOT WORK FOR DIRECTED GRAPHS.
+\textbf{NOTE: Not sure if it works correctly with disconnected graphs or produces the correct min cut. DOES NOT WORK FOR DIRECTED GRAPHS.}
 \code{graphs/gomory_hu_tree.cpp}
 
 \subsection{Minimal Spanning Tree $\mathcal{O}(E \log V)$}
