@@ -1,6 +1,6 @@
 const ll INF = 1LL << 61;
 // G[u] = { (v,w) | edge u->v, cost w }
-vi bellman_ford(vector<vii> G, ll s) {
+vi bellman_ford(vvii G, ll s) {
 	ll n = sz(G);
 	vi d(n, INF); d[s] = 0;
 	REP(loops, n) REP(u, n) if(d[u] != INF)

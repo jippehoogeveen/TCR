@@ -18,10 +18,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="Merges zijn leuk">
-      <change beforePath="$PROJECT_DIR$/.idea/editor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/T.cpp.hash" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/cartesian_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/cartesian_tree.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphs/gomory_hu_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/graphs/gomory_hu_tree.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,7 +100,11 @@
       <workItem from="1755362266393" duration="10000" />
       <workItem from="1755370966431" duration="1263000" />
       <workItem from="1755412426782" duration="21000" />
-      <workItem from="1755421452491" duration="1094000" />
+      <workItem from="1755421452491" duration="1793000" />
+      <workItem from="1755598496556" duration="604000" />
+      <workItem from="1755707678355" duration="1000" />
+      <workItem from="1755849170490" duration="2000" />
+      <workItem from="1756196345964" duration="1747000" />
     </task>
     <servers />
   </component>

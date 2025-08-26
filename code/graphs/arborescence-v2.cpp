@@ -1,6 +1,6 @@
 const ll oo = 1e9;
 int N, R;
-vector<vii> g;
+vvii g;
 vi pred, label, node, helper;
 
 int get_node(int n) {
@@ -60,8 +60,8 @@ ll cycle(vi &active, int n, int &cend) {
 // assuming it exists.
 // adj[i] contains (j, v) with edge i -> j with value v
 // pred[i] is parent in arborescence
-ll min_arbor(vector<vii>& adj, int r) {
-	N = sz(adj); R = r; g = vector<vii>(N);
+ll min_arbor(vvii& adj, int r) {
+	N = sz(adj); R = r; g = vvii(N);
 	REP(i, N) for(ii p : adj[i]) g[p.x].eb(i,p.y);
 	pred = label = node = helper = vi(N);
 	ll res = 0;

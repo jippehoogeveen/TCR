@@ -1,5 +1,5 @@
 // (dist, prev)
-pair<vi,vi> dijkstra(const vector<vii> &G, int s) {
+pair<vi,vi> dijkstra(const vvii &G, int s) {
 	vi d(sz(G), LLONG_MAX), p(sz(G), -1);
 	set<ii> Q{ ii{ d[s] = 0, s } }; // (dist[v], v)
 	while (!Q.empty()) {

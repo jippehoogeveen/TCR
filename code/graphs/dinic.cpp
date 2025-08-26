@@ -45,4 +45,7 @@ struct Dinic {
 		REP(i, sz(H)) antw[i] = !H[i];
 		return antw;
 	}
+	void resetflow() {
+		REP(i, sz(G)) G[i].f = 0;
+	}
 };
