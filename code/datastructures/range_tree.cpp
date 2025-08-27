@@ -25,10 +25,10 @@ struct rangetree {
                 ir++; } }
         lind[i].pb(il); rind[i].pb(ir); return res; }
     ll nexti(vi& a, ll v) {//first i with a[i] >= v
-        ll l = -1, r = sz(a), m;
-        while(r - l > 1) {
-            m = (l + r) / 2;
-            if(a[m] < v) l = m;
+        ll k = -1, r = sz(a), m;
+        while(r - k > 1) {
+            m = (k + r) / 2;
+            if(a[m] < v) k = m;
             else r = m; }
         return r; }
     ll q(ll iy, ll _l, ll _r, ll i) {
@@ -37,6 +37,6 @@ struct rangetree {
         return q(lind[i][iy], _l, _r, 2 * i + 1) + q(rind[i][iy], _l, _r, 2 * i + 2); }
     //query #points in [xl, xr] x [yl, yr]
     ll query(ll xl, ll xr, ll yl, ll yr) {
-        ll l = nexti(xtop, xl), r = nexti(xtop, xr + 1) - 1;
+        ll k = nexti(xtop, xl), r = nexti(xtop, xr + 1) - 1;
         ll y1 = nexti(ytop, yl), y2 = nexti(ytop, yr + 1);
-        return q(y2, l, r, 0) - q(y1, l, r, 0); }};
+        return q(y2, k, r, 0) - q(y1, k, r, 0); }};

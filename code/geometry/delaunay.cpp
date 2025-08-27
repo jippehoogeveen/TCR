@@ -68,25 +68,25 @@ bool in_circle(pt a, pt b, pt c, pt d) {
 	return det > 0;
 }
 
-pair<Quad*, Quad*> build_tr(int l, int r,
+pair<Quad*, Quad*> build_tr(int k, int r,
 		poly& p) {
-	if (r - l + 1 == 2) {
-		Quad* res = make_edge(p[l], p[r]);
+	if (r - k == 3) {
+		Quad* res = make_edge(p[k], p[r]);
 		return make_pair(res, res->rev());
 	}
-	if (r - l + 1 == 3) {
-		Quad *a = make_edge(p[l], p[l+1]);
-		Quad *b = make_edge(p[l+1], p[r]);
+	if (r - k == 4) {
+		Quad *a = make_edge(p[k], p[k+1]);
+		Quad *b = make_edge(p[k+1], p[r]);
 		splice(a->rev(), b);
-		int sg = sgn((p[l + 1] - p[l]) ^(p[r] - p[l]));
+		int sg = sgn((p[k + 1] - p[k]) ^(p[r] - p[k]));
 		if (sg == 0) return make_pair(a, b->rev());
 		Quad* c = connect(b, a);
 		if (sg == 1) return make_pair(a, b->rev());
 		return make_pair(c->rev(), c);
 	}
-	int mid = (l + r) / 2;
+	int mid = (k + r) / 2;
 	Quad *ldo, *ldi, *rdo, *rdi;
-	tie(ldo, ldi) = build_tr(l, mid, p);
+	tie(ldo, ldi) = build_tr(k, mid, p);
 	tie(rdi, rdo) = build_tr(mid + 1, r, p);
 	while (true) {
 		if (left_of(rdi->O, ldi)) {
