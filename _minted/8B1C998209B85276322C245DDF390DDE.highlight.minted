@@ -1,0 +1,83 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{ld}\PYG{+w}{ }\PYG{n+nf}{perimeter}\PYG{p}{(}\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{);}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{ld}\PYG{+w}{ }\PYG{n+nf}{area}\PYG{p}{(}\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{ab}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{bc}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{ca}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{ }\PYG{c+c1}{// Heron\PYGZsq{}s formula}
+\PYG{+w}{  }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.5}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ab}\PYG{o}{+}\PYG{n}{bc}\PYG{o}{+}\PYG{n}{ca}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)}\PYG{o}{*}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{o}{\PYGZhy{}}\PYG{n}{ab}\PYG{p}{)}\PYG{o}{*}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{o}{\PYGZhy{}}\PYG{n}{bc}\PYG{p}{)}\PYG{o}{*}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{s}\PYG{o}{\PYGZhy{}}\PYG{n}{ca}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{ld}\PYG{+w}{ }\PYG{n+nf}{area}\PYG{p}{(}\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{area}\PYG{p}{(}\PYG{n}{dist}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+\PYG{n}{ld}\PYG{+w}{ }\PYG{n+nf}{rInCircle}\PYG{p}{(}\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{ab}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{bc}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{ca}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{area}\PYG{p}{(}\PYG{n}{ab}\PYG{p}{,}\PYG{n}{bc}\PYG{p}{,}\PYG{n}{ca}\PYG{p}{)}\PYG{o}{*}\PYG{l+m+mf}{2.0}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ab}\PYG{o}{+}\PYG{n}{bc}\PYG{o}{+}\PYG{n}{ca}\PYG{p}{);}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{ld}\PYG{+w}{ }\PYG{n+nf}{rInCircle}\PYG{p}{(}\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{rInCircle}\PYG{p}{(}\PYG{n}{dist}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{),}\PYG{n}{dist}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{n}{c}\PYG{p}{),}\PYG{n}{dist}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,}\PYG{n}{a}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+\PYG{c+c1}{// assumption: the required points/lines functions}
+\PYG{c+c1}{// have been written.}
+\PYG{c+c1}{// Returns if there is an inCircle center}
+\PYG{c+c1}{// if it returns TRUE, ctr will be the inCircle}
+\PYG{c+c1}{// center and r is the same as rInCircle}
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{inCircle}\PYG{p}{(}\PYG{n}{point}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{point}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{point}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{point}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{ctr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ld}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{r}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{r}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{rInCircle}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{fabs}\PYG{p}{(}\PYG{n}{r}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{EPS}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+
+\PYG{+w}{  }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{ratio}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{q1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p2}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p3}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ratio}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{ratio}\PYG{p}{));}
+
+\PYG{+w}{  }\PYG{n}{ratio}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{p2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{p2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{q2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p3}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ratio}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{ratio}\PYG{p}{));}
+
+\PYG{+w}{  }\PYG{c+c1}{// get their intersection point:}
+\PYG{+w}{  }\PYG{n}{ctr}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{lineLineIntersection}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{q1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{q2}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{ld}\PYG{+w}{ }\PYG{n+nf}{rCircumCircle}\PYG{p}{(}\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{ab}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{bc}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{ca}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{ab}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{bc}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{ca}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{p}{(}\PYG{l+m+mf}{4.0}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{area}\PYG{p}{(}\PYG{n}{ab}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{bc}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ca}\PYG{p}{));}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+
+\PYG{n}{ld}\PYG{+w}{ }\PYG{n+nf}{rCircumCircle}\PYG{p}{(}\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{rCircumCircle}\PYG{p}{(}
+\PYG{+w}{      }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{n}{c}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,}\PYG{n}{a}\PYG{p}{));}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// assumption: the required points/lines functions}
+\PYG{c+c1}{// have been written.}
+\PYG{c+c1}{// Returns 1 iff there is a circumCenter center}
+\PYG{c+c1}{// if this function returns 1, ctr will be the}
+\PYG{c+c1}{// circumCircle center and r = rCircumCircle}
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{circumCircle}\PYG{p}{(}\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{ctr}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ld}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{r}\PYG{p}{)\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{p1}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{e}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{a}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p1}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p1}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{p2}\PYG{p}{.}\PYG{n}{y}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{f}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p1}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{d}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p1}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{p3}\PYG{p}{.}\PYG{n}{y}\PYG{p}{);}
+\PYG{+w}{  }\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{g}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{2.0}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{a}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p3}\PYG{p}{.}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{p2}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p3}\PYG{p}{.}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{p2}\PYG{p}{.}\PYG{n}{x}\PYG{p}{));}
+\PYG{+w}{  }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{fabs}\PYG{p}{(}\PYG{n}{g}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{EPS}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}\PYG{+w}{ }
+
+\PYG{+w}{  }\PYG{n}{ctr}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{d}\PYG{o}{*}\PYG{n}{e}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{b}\PYG{o}{*}\PYG{n}{f}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{ctr}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{a}\PYG{o}{*}\PYG{n}{f}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{c}\PYG{o}{*}\PYG{n}{e}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{/}\PYG{+w}{ }\PYG{n}{g}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{r}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{p1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ctr}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// r = dist(center, p\PYGZus{}i)}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// returns if pt d is strictly inside the}
+\PYG{c+c1}{// circumCircle defined by a,b,c}
+\PYG{c+c1}{// for non strict, change \PYGZlt{} to \PYGZlt{}=}
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{inCircumCircle}\PYG{p}{(}\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{  }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{d}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{va}\PYG{o}{=}\PYG{p}{(}\PYG{n}{d}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{vb}\PYG{o}{=}\PYG{p}{(}\PYG{n}{d}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{vc}\PYG{o}{=}\PYG{p}{(}\PYG{n}{d}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}
+\PYG{+w}{   }\PYG{n}{va}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{vb}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{vc}\PYG{p}{.}\PYG{n}{x}\PYG{o}{*}\PYG{n}{vc}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{vc}\PYG{p}{.}\PYG{n}{y}\PYG{o}{*}\PYG{n}{vc}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{+}
+\PYG{+w}{   }\PYG{n}{va}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{vb}\PYG{p}{.}\PYG{n}{x}\PYG{o}{*}\PYG{n}{vb}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{vb}\PYG{p}{.}\PYG{n}{y}\PYG{o}{*}\PYG{n}{vb}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{vc}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+}
+\PYG{+w}{   }\PYG{p}{(}\PYG{n}{va}\PYG{p}{.}\PYG{n}{x}\PYG{o}{*}\PYG{n}{va}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{va}\PYG{p}{.}\PYG{n}{y}\PYG{o}{*}\PYG{n}{va}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{vb}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{vc}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}
+\PYG{+w}{   }\PYG{p}{(}\PYG{n}{va}\PYG{p}{.}\PYG{n}{x}\PYG{o}{*}\PYG{n}{va}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{va}\PYG{p}{.}\PYG{n}{y}\PYG{o}{*}\PYG{n}{va}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{vb}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{vc}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}
+\PYG{+w}{   }\PYG{n}{va}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{vb}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{vc}\PYG{p}{.}\PYG{n}{x}\PYG{o}{*}\PYG{n}{vc}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{vc}\PYG{p}{.}\PYG{n}{y}\PYG{o}{*}\PYG{n}{vc}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}
+\PYG{+w}{   }\PYG{n}{va}\PYG{p}{.}\PYG{n}{x}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{vb}\PYG{p}{.}\PYG{n}{x}\PYG{o}{*}\PYG{n}{vb}\PYG{p}{.}\PYG{n}{x}\PYG{o}{+}\PYG{n}{vb}\PYG{p}{.}\PYG{n}{y}\PYG{o}{*}\PYG{n}{vb}\PYG{p}{.}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{vc}\PYG{p}{.}\PYG{n}{y}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{canFormTriangle}\PYG{p}{(}\PYG{n}{NUM}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{NUM}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{NUM}\PYG{+w}{ }\PYG{n}{c}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{a}\PYG{o}{+}\PYG{n}{b}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{a}\PYG{o}{+}\PYG{n}{c}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{b}\PYG{o}{+}\PYG{n}{c}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

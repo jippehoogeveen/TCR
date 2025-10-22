@@ -1,0 +1,69 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{//cnt[sa.locstr(s)] = \PYGZsh{}distinct substrings of sa with prefix s}
+\PYG{n}{vi}\PYG{+w}{ }\PYG{n+nf}{distinct}\PYG{p}{(}\PYG{n}{suffix\PYGZus{}automaton}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{vi}\PYG{+w}{ }\PYG{n}{cnt}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{vi}\PYG{p}{(}\PYG{n}{sa}\PYG{p}{.}\PYG{n}{sz}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{);}\PYG{+w}{ }\PYG{n}{cnt}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{topo}\PYG{p}{)}
+\PYG{+w}{        }\PYG{k}{for}\PYG{p}{(}\PYG{k}{auto}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{next}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}
+\PYG{+w}{            }\PYG{n}{cnt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{cnt}\PYG{p}{[}\PYG{n}{p}\PYG{p}{.}\PYG{n}{y}\PYG{p}{];}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{cnt}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//cnt[sa.locstr(s)] = \PYGZsh{}locations of s in sa}
+\PYG{n}{vi}\PYG{+w}{ }\PYG{n+nf}{occur}\PYG{p}{(}\PYG{n}{suffix\PYGZus{}automaton}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{vi}\PYG{+w}{ }\PYG{n}{cnt}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{vi}\PYG{p}{(}\PYG{n}{sa}\PYG{p}{.}\PYG{n}{sz}\PYG{p}{,}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{sa}\PYG{p}{.}\PYG{n}{s}\PYG{p}{);}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{++}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{cnt}\PYG{p}{[}\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{next}\PYG{p}{[}\PYG{n}{cur}\PYG{p}{][}\PYG{n}{sa}\PYG{p}{.}\PYG{n}{s}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]]}\PYG{o}{++}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{topo}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{cnt}\PYG{p}{[}\PYG{n}{sa}\PYG{p}{.}\PYG{n}{link}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]]}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{cnt}\PYG{p}{[}\PYG{n}{i}\PYG{p}{];}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{cnt}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//return endpositions of occurrences of t (unsorted!)}
+\PYG{n}{vi}\PYG{+w}{ }\PYG{n+nf}{location}\PYG{p}{(}\PYG{n}{suffix\PYGZus{}automaton}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{string}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{t}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{locstr}\PYG{p}{(}\PYG{n}{t}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{if}\PYG{p}{(}\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{vi}\PYG{p}{();}
+\PYG{+w}{    }\PYG{n}{vi}\PYG{+w}{ }\PYG{n}{res}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{cur}\PYG{p}{);}
+\PYG{+w}{    }\PYG{k}{while}\PYG{p}{(}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{stack}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{n}{back}\PYG{p}{(),}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+\PYG{+w}{        }\PYG{n}{res}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{sa}\PYG{p}{.}\PYG{n}{first}\PYG{p}{[}\PYG{n}{cur}\PYG{p}{]);}
+\PYG{+w}{        }\PYG{k}{for}\PYG{p}{(}\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{linkinv}\PYG{p}{[}\PYG{n}{cur}\PYG{p}{])}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{n}\PYG{p}{);}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{res}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{//find the longest common substring}
+\PYG{n}{string}\PYG{+w}{ }\PYG{n+nf}{lcs}\PYG{p}{(}\PYG{n}{vs}\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{c+c1}{//Make the automaton}
+\PYG{+w}{    }\PYG{n}{vc}\PYG{+w}{ }\PYG{n}{extra}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{s}\PYG{p}{))}
+\PYG{+w}{      }\PYG{n}{extra}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{256}\PYG{p}{);}\PYG{c+c1}{//assert not in s!}
+\PYG{+w}{    }\PYG{n}{suffix\PYGZus{}automaton}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{s}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{extend}\PYG{p}{(}\PYG{n}{c}\PYG{p}{);}
+\PYG{+w}{        }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{extend}\PYG{p}{(}\PYG{n}{extra}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{    }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{maketopo}\PYG{p}{();}
+\PYG{+w}{    }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{makelinkinvs}\PYG{p}{();}
+
+\PYG{+w}{    }\PYG{c+c1}{//Determine possible locations}
+\PYG{+w}{    }\PYG{n}{vvb}\PYG{+w}{ }\PYG{n}{pos}\PYG{p}{;}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{cur}\PYG{p}{;}
+\PYG{+w}{    }\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{s}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{n}{pos}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{vb}\PYG{p}{(}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{s}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]),}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{));}
+\PYG{+w}{        }\PYG{n}{vi}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{next}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{n}{extra}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]];}
+\PYG{+w}{        }\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{char}\PYG{+w}{ }\PYG{n}{c}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{s}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{next}\PYG{p}{[}\PYG{n}{cur}\PYG{p}{][}\PYG{n}{c}\PYG{p}{];}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{cur}\PYG{p}{);}
+\PYG{+w}{        }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{while}\PYG{p}{(}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{stack}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{cur}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{n}{back}\PYG{p}{();}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+\PYG{+w}{            }\PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{pos}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{cur}\PYG{p}{])}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{                }\PYG{n}{pos}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{cur}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{                }\PYG{k}{for}\PYG{p}{(}\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{linkinv}\PYG{p}{[}\PYG{n}{cur}\PYG{p}{])}\PYG{+w}{ }\PYG{n}{stack}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{p}\PYG{p}{);}
+\PYG{+w}{            }\PYG{p}{\PYGZcb{}\PYGZcb{}\PYGZcb{}}
+
+\PYG{+w}{    }\PYG{c+c1}{//Determine the answer}
+\PYG{+w}{    }\PYG{k}{for}\PYG{p}{(}\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{topo}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{        }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{can}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}
+\PYG{+w}{        }\PYG{n}{REP}\PYG{p}{(}\PYG{n}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{s}\PYG{p}{))}\PYG{+w}{ }\PYG{k}{if}\PYG{p}{(}\PYG{o}{!}\PYG{n}{pos}\PYG{p}{[}\PYG{n}{j}\PYG{p}{][}\PYG{n}{i}\PYG{p}{])}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{            }\PYG{n}{can}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}
+\PYG{+w}{            }\PYG{k}{break}\PYG{p}{;\PYGZcb{}}
+\PYG{+w}{        }\PYG{k}{if}\PYG{p}{(}\PYG{n}{can}\PYG{p}{)}
+\PYG{+w}{            }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{sa}\PYG{p}{.}\PYG{n}{maxstring}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}\PYG{c+c1}{//sa.length[i]}
+\PYG{+w}{    }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

@@ -1,0 +1,10 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{ii}\PYG{+w}{ }\PYG{n+nf}{find\PYGZus{}cycle}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x0}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{*}\PYG{n}{f}\PYG{p}{)(}\PYG{k+kt}{int}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{h}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{t}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{mu}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lam}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{t}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{h}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{t}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{h}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{h}\PYG{p}{));}
+\PYG{+w}{  }\PYG{n}{h}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{x0}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{t}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{h}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{t}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{t}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{h}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{h}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{mu}\PYG{o}{++}\PYG{p}{;}
+\PYG{+w}{  }\PYG{n}{h}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{t}\PYG{p}{);}
+\PYG{+w}{  }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{t}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{h}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{h}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{f}\PYG{p}{(}\PYG{n}{h}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{lam}\PYG{o}{++}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{ii}\PYG{p}{(}\PYG{n}{mu}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{lam}\PYG{p}{);}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

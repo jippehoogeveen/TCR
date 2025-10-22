@@ -63,6 +63,15 @@ bool segmentHasPoint(pt p, pt a, pt b) {
 	return abs(u^v) < EPS && u*v <= 0;
 }
 
+//Test if segments a, b and c, d intersect (in point or line segment)
+bool segmentsIntersect(pt a, pt b, pt c, pt d) {
+	if(!linesIntersect(a, b, c, d)) {
+		return segmentHasPoint(a, c, d) || segmentHasPoint(b, c, d) ||
+			segmentHasPoint(c, a, b) || segmentHasPoint(d, a, b); }
+	return (sign((c - a) ^ (b - a)) * sign((d - a) ^ (b - a)) <= 0 &&
+		sign((a - c) ^ (d - c)) * sign((b - c) ^ (d - c)) <= 0);
+}
+
 // Check lines intersect!
 // NUM has to be ld
 pt lineLineIntersection(pt a, pt b, pt c, pt d) {

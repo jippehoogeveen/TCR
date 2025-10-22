@@ -1,0 +1,13 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{edge}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{y}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{w}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{};}
+\PYG{n}{ll}\PYG{+w}{ }\PYG{n+nf}{kruskal}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{vector}\PYG{o}{\PYGZlt{}}\PYG{n}{edge}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{edges}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{dsu}\PYG{+w}{ }\PYG{n}{D}\PYG{p}{(}\PYG{n}{n}\PYG{p}{);}
+\PYG{+w}{	}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{all}\PYG{p}{(}\PYG{n}{edges}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{[]}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{edge}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{edge}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}\PYGZgt{}}\PYG{+w}{ }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{.}\PYG{n}{w}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{.}\PYG{n}{w}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{});}
+\PYG{+w}{	}\PYG{n}{ll}\PYG{+w}{ }\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{edge}\PYG{+w}{ }\PYG{n}{e}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{edges}\PYG{p}{)}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{D}\PYG{p}{.}\PYG{n}{find}\PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{D}\PYG{p}{.}\PYG{n}{find}\PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{y}\PYG{p}{))}
+\PYG{+w}{			}\PYG{n}{ret}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{.}\PYG{n}{w}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{D}\PYG{p}{.}\PYG{n}{unite}\PYG{p}{(}\PYG{n}{e}\PYG{p}{.}\PYG{n}{x}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{e}\PYG{p}{.}\PYG{n}{y}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{ret}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

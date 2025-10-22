@@ -17,16 +17,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="Merges zijn leuk">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/lazy_segment_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/lazy_segment_tree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/persistent_segment_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/persistent_segment_tree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/range_tree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/range_tree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datastructures/sparse_table.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/datastructures/sparse_table.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geometry/delaunay.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/geometry/delaunay.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/satsolver.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/satsolver.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/strings/hasher.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/strings/hasher.cpp" afterDir="false" />
-    </list>
+    <list default="true" id="0d8becd0-7de9-45b6-8336-abe5b00b3ec2" name="Changes" comment="Merges zijn leuk" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +102,7 @@
       <workItem from="1755707678355" duration="1000" />
       <workItem from="1755849170490" duration="2000" />
       <workItem from="1756196345964" duration="3898000" />
-      <workItem from="1756280870675" duration="904000" />
+      <workItem from="1756280870675" duration="1509000" />
     </task>
     <servers />
   </component>

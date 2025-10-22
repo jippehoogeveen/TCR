@@ -1,0 +1,14 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{levDist}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{string}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{w1}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{string}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{w2}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{w1}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{n2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{w2}\PYG{p}{)}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{vvi}\PYG{+w}{ }\PYG{n}{dp}\PYG{p}{(}\PYG{n}{n1}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{vi}\PYG{p}{(}\PYG{n}{n2}\PYG{p}{));}
+\PYG{+w}{	}\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{n1}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{dp}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{i}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// removal}
+\PYG{+w}{	}\PYG{n}{REP}\PYG{p}{(}\PYG{n}{j}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{n2}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{dp}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{j}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// insertion}
+\PYG{+w}{	}\PYG{n}{rep}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{n1}\PYG{p}{)}\PYG{+w}{ }\PYG{n}{rep}\PYG{p}{(}\PYG{n}{j}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{n2}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{dp}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}
+\PYG{+w}{			}\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{dp}\PYG{p}{[}\PYG{n}{i}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{][}\PYG{n}{j}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{dp}\PYG{p}{[}\PYG{n}{i}\PYG{p}{][}\PYG{n}{j}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{]),}
+\PYG{+w}{			}\PYG{n}{dp}\PYG{p}{[}\PYG{n}{i}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{][}\PYG{n}{j}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{w1}\PYG{p}{[}\PYG{n}{i}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{w2}\PYG{p}{[}\PYG{n}{j}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{])}
+\PYG{+w}{		}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{dp}\PYG{p}{[}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{w1}\PYG{p}{)][}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{w2}\PYG{p}{)];}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

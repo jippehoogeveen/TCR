@@ -1,0 +1,64 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// returns the perimeter: sum of Euclidean distances}
+\PYG{c+c1}{// of consecutive line segments (polygon edges)}
+\PYG{n}{ld}\PYG{+w}{ }\PYG{n+nf}{perimeter}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{poly}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{P}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{result}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mf}{0.0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{P}\PYG{p}{)}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)}
+\PYG{+w}{	  }\PYG{n}{result}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{dist}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]);}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{result}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// Returns TWICE the area of a polygon (for integers)}
+\PYG{n}{NUM}\PYG{+w}{ }\PYG{n+nf}{polygonTwiceArea}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{poly}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{P}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{NUM}\PYG{+w}{ }\PYG{n}{area}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{n}{sz}\PYG{p}{(}\PYG{n}{P}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{+w}{		}\PYG{n}{area}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{];}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{abs}\PYG{p}{(}\PYG{n}{area}\PYG{p}{);}\PYG{+w}{ }\PYG{c+c1}{// area \PYGZlt{} 0 \PYGZlt{}=\PYGZgt{} p ccw}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// returns true if we always make the same turn}
+\PYG{c+c1}{// throughout the polygon (strict)}
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{isConvex}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{poly}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{P}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{P}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{n}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// point=2; line=3}
+\PYG{+w}{	}\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{isLeft}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{ccw}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{]);}
+\PYG{+w}{	}\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{n}\PYG{l+m+mi}{\PYGZhy{}2}\PYG{p}{)}\PYG{+w}{ }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{ccw}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],}
+\PYG{+w}{		  }\PYG{n}{P}\PYG{p}{[(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{?}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{p}{])}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{isLeft}\PYG{+w}{ }\PYG{o}{||}
+\PYG{+w}{		  }\PYG{n}{col}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[(}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{?}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{2}\PYG{p}{]))}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{false}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// different sign \PYGZhy{}\PYGZgt{} concave}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{c+c1}{// convex}
+
+
+\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{insidePolygon}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{poly}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{P}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n}{strict}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n+nb}{true}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{P}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{c+c1}{// if p is on edge of polygon}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{segmentHasPoint}\PYG{p}{(}\PYG{n}{p}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]))}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{o}{!}\PYG{n}{strict}\PYG{p}{;}
+\PYG{+w}{		}\PYG{c+c1}{// or: if(distPtSegmentSq(p, pts[i], pts[i + 1]) \PYGZlt{}= EPS) return !strict;}
+
+\PYG{+w}{		}\PYG{c+c1}{// increment n if segment intersects line from p}
+\PYG{+w}{		}\PYG{n}{n}\PYG{+w}{ }\PYG{o}{+=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{max}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{y}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{y}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{].}\PYG{n}{y}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}
+\PYG{+w}{			}\PYG{p}{(((}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{+}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{])}\PYG{o}{\PYGZca{}}\PYG{p}{(}\PYG{n}{p}\PYG{o}{\PYGZhy{}}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]))}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{P}\PYG{p}{[}\PYG{n}{i}\PYG{p}{].}\PYG{n}{y}\PYG{+w}{ }\PYG{o}{\PYGZlt{}=}\PYG{+w}{ }\PYG{n}{p}\PYG{p}{.}\PYG{n}{y}\PYG{p}{));}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{c+c1}{// inside if odd number of intersections}
+\PYG{p}{\PYGZcb{}}
+
+\PYG{c+c1}{// cuts polygon Q along the line formed by a \PYGZhy{}\PYGZgt{} b}
+\PYG{c+c1}{// (note: Q[0] == Q[n\PYGZhy{}1] is assumed)}
+\PYG{c+c1}{// NUM has to be ld}
+\PYG{n}{poly}\PYG{+w}{ }\PYG{n+nf}{cutPolygon}\PYG{p}{(}\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{k}{const}\PYG{+w}{ }\PYG{n}{poly}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{Q}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{n}{poly}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{;}
+\PYG{+w}{	}\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{))}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{left1}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{);}
+\PYG{+w}{		}\PYG{n}{ld}\PYG{+w}{ }\PYG{n}{left2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{p}{;}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{i}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{)}\PYG{l+m+mi}{\PYGZhy{}1}\PYG{p}{)}
+\PYG{+w}{			}\PYG{n}{left2}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{b}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{);}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{left1}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{EPS}\PYG{p}{)}
+\PYG{+w}{			}\PYG{n}{P}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}\PYG{+w}{ }\PYG{c+c1}{// Q[i] is left of ab}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{left1}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{left2}\PYG{+w}{ }\PYG{o}{\PYGZlt{}}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{n}{EPS}\PYG{p}{)}
+\PYG{+w}{			}\PYG{c+c1}{// edge Q[i]\PYGZhy{}\PYGZhy{}Q[i+1] crosses line ab}
+\PYG{+w}{				}\PYG{n}{P}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{pt}\PYG{p}{());}\PYG{+w}{ }\PYG{n}{lineIntersectSeg}\PYG{p}{(}\PYG{n}{Q}\PYG{p}{[}\PYG{n}{i}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{Q}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{.}\PYG{n}{back}\PYG{p}{());}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{P}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{o}{!}\PYG{p}{(}\PYG{n}{P}\PYG{p}{.}\PYG{n}{back}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{==}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{.}\PYG{n}{front}\PYG{p}{()))}
+\PYG{+w}{		}\PYG{n}{P}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{P}\PYG{p}{.}\PYG{n}{front}\PYG{p}{());}\PYG{+w}{ }\PYG{c+c1}{// make P[0] == P[n\PYGZhy{}1]}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{P}\PYG{p}{;}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

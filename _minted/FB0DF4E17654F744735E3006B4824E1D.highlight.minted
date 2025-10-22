@@ -1,0 +1,23 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{// the convex hull consists of: \PYGZob{} pts[ret[0]], pts[ret[1]], ... pts[ret.back()] \PYGZcb{} in counterclockwise order}
+\PYG{n}{vi}\PYG{+w}{ }\PYG{n+nf}{convexHull}\PYG{p}{(}\PYG{k}{const}\PYG{+w}{ }\PYG{n}{poly}\PYG{+w}{ }\PYG{o}{\PYGZam{}}\PYG{n}{pts}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{	}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{pts}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{())}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{vi}\PYG{p}{();}
+\PYG{+w}{	}\PYG{n}{vi}\PYG{+w}{ }\PYG{n}{ret}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{ord}\PYG{p}{;}
+\PYG{+w}{	}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{n}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{pts}\PYG{p}{),}\PYG{+w}{ }\PYG{n}{st}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{min\PYGZus{}element}\PYG{p}{(}\PYG{n}{all}\PYG{p}{(}\PYG{n}{pts}\PYG{p}{))}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{pts}\PYG{p}{.}\PYG{n}{begin}\PYG{p}{();}
+\PYG{+w}{	}\PYG{n}{REP}\PYG{p}{(}\PYG{n}{i}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{n}\PYG{p}{)}
+\PYG{+w}{		}\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{pts}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{n}{pts}\PYG{p}{[}\PYG{n}{st}\PYG{p}{])}\PYG{+w}{ }\PYG{n}{ord}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+\PYG{+w}{	}\PYG{n}{sort}\PYG{p}{(}\PYG{n}{all}\PYG{p}{(}\PYG{n}{ord}\PYG{p}{),}\PYG{+w}{ }\PYG{p}{[}\PYG{o}{\PYGZam{}}\PYG{n}{pts}\PYG{p}{,}\PYG{o}{\PYGZam{}}\PYG{n}{st}\PYG{p}{]}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{a}\PYG{p}{,}\PYG{+w}{ }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{b}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{n}{pt}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{pts}\PYG{p}{[}\PYG{n}{a}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{pts}\PYG{p}{[}\PYG{n}{st}\PYG{p}{],}\PYG{+w}{ }\PYG{n}{q}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{pts}\PYG{p}{[}\PYG{n}{b}\PYG{p}{]}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{n}{pts}\PYG{p}{[}\PYG{n}{st}\PYG{p}{];}
+\PYG{+w}{		}\PYG{k}{return}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p}\PYG{+w}{ }\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{q}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{!=}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{o}{?}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{p}\PYG{+w}{ }\PYG{o}{\PYGZca{}}\PYG{+w}{ }\PYG{n}{q}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{0}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{p}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{q}\PYG{+w}{ }\PYG{o}{*}\PYG{+w}{ }\PYG{n}{q}\PYG{p}{;}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{});}
+\PYG{+w}{	}\PYG{n}{ord}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{st}\PYG{p}{);}\PYG{+w}{ }\PYG{n}{ret}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{st}\PYG{p}{);}
+\PYG{+w}{	}\PYG{k}{for}\PYG{+w}{ }\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{i}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{ord}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{		}\PYG{c+c1}{// use \PYGZsq{}\PYGZgt{}=\PYGZsq{} in ccw to include ALL points on the hull\PYGZhy{}line}
+\PYG{+w}{		}\PYG{k}{for}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{=}\PYG{+w}{ }\PYG{n}{sz}\PYG{p}{(}\PYG{n}{ret}\PYG{p}{)}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{;}\PYG{+w}{ }\PYG{n}{s}\PYG{+w}{ }\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{o}{!}\PYG{n}{ccw}\PYG{p}{(}\PYG{n}{pts}\PYG{p}{[}\PYG{n}{ret}\PYG{p}{[}\PYG{n}{s}\PYG{+w}{ }\PYG{o}{\PYGZhy{}}\PYG{+w}{ }\PYG{l+m+mi}{1}\PYG{p}{]],}\PYG{+w}{ }\PYG{n}{pts}\PYG{p}{[}\PYG{n}{ret}\PYG{p}{[}\PYG{n}{s}\PYG{p}{]],}\PYG{+w}{ }\PYG{n}{pts}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]);}\PYG{+w}{ }\PYG{n}{s}\PYG{o}{\PYGZhy{}\PYGZhy{}}\PYG{p}{)}
+\PYG{+w}{			}\PYG{n}{ret}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+\PYG{+w}{		}\PYG{n}{ret}\PYG{p}{.}\PYG{n}{pb}\PYG{p}{(}\PYG{n}{i}\PYG{p}{);}
+\PYG{+w}{	}\PYG{p}{\PYGZcb{}}
+\PYG{+w}{	}\PYG{n}{ret}\PYG{p}{.}\PYG{n}{pop\PYGZus{}back}\PYG{p}{();}
+\PYG{+w}{	}\PYG{k}{return}\PYG{+w}{ }\PYG{n}{ret}\PYG{p}{;}
+\PYG{p}{\PYGZcb{}}
+\end{MintedVerbatim}

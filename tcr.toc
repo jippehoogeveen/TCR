@@ -1,0 +1,103 @@
+\contentsline {subsection}{\tocsubsection {}{0.1}{De winnende aanpak}}{2}{}%
+\contentsline {subsection}{\tocsubsection {}{0.2}{Wrong Answer}}{2}{}%
+\contentsline {section}{\tocsection {}{1}{Mathematics}}{2}{}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{Primitive Root $O(\sqrt {m})$}}{3}{}%
+\contentsline {subsection}{\tocsubsection {}{1.2}{Tonelli-Shanks algorithm}}{3}{}%
+\contentsline {subsection}{\tocsubsection {}{1.3}{Numeric Integration}}{3}{}%
+\contentsline {subsection}{\tocsubsection {}{1.4}{Fast Hadamard Transform}}{3}{}%
+\contentsline {subsection}{\tocsubsection {}{1.5}{Tridiagonal Matrix Algorithm}}{3}{}%
+\contentsline {subsection}{\tocsubsection {}{1.6}{Number of Integer Points under Line}}{3}{}%
+\contentsline {subsection}{\tocsubsection {}{1.7}{Solving linear recurrences}}{3}{}%
+\contentsline {subsection}{\tocsubsection {}{1.8}{Misc}}{4}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{1.8.1}{Josephus problem}}{4}{}%
+\contentsline {section}{\tocsection {}{2}{Datastructures}}{4}{}%
+\contentsline {subsection}{\tocsubsection {}{2.1}{Order tree}}{4}{}%
+\contentsline {subsection}{\tocsubsection {}{2.2}{Segment tree $\mathcal {O}(\log n)$}}{4}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.1}{Lazy segment tree}}{4}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{2.2.2}{Persistent segment tree}}{4}{}%
+\contentsline {subsection}{\tocsubsection {}{2.3}{Binary Indexed Tree $\mathcal {O}(\log n)$}}{5}{}%
+\contentsline {subsection}{\tocsubsection {}{2.4}{Disjoint-Set / Union-Find $\mathcal {O}(\alpha (n))$}}{5}{}%
+\contentsline {subsection}{\tocsubsection {}{2.5}{Cartesian tree/Treap}}{5}{}%
+\contentsline {subsection}{\tocsubsection {}{2.6}{Heap}}{5}{}%
+\contentsline {subsection}{\tocsubsection {}{2.7}{Misof Tree}}{6}{}%
+\contentsline {subsection}{\tocsubsection {}{2.8}{$k$-d Tree}}{6}{}%
+\contentsline {subsection}{\tocsubsection {}{2.9}{Range Tree}}{6}{}%
+\contentsline {subsection}{\tocsubsection {}{2.10}{Monotonic Queue}}{7}{}%
+\contentsline {subsection}{\tocsubsection {}{2.11}{Line container \`{a} la `Convex Hull Trick' $\mathcal {O}(n \log n)$}}{7}{}%
+\contentsline {subsection}{\tocsubsection {}{2.12}{Li-Chao tree}}{7}{}%
+\contentsline {subsection}{\tocsubsection {}{2.13}{Sparse Table $O(\log n)$ per query}}{7}{}%
+\contentsline {section}{\tocsection {}{3}{Graph Algorithms}}{7}{}%
+\contentsline {subsection}{\tocsubsection {}{3.1}{Shortest path}}{7}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.1.1}{Dijkstra $\mathcal {O}(|E|\log {|V|})$}}{7}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.1.2}{Floyd-Warshall $\mathcal {O}(V^{3})$ all pairs}}{7}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.1.3}{Bellman Ford $\mathcal {O}(V E)$}}{7}{}%
+\contentsline {subsection}{\tocsubsection {}{3.2}{Maximum Matching}}{8}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.1}{Standard bipartite matching $\mathcal {O}(\lvert L \rvert \cdot \lvert R \rvert )$}}{8}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.2}{Hopcroft-Karp bipartite matching $\mathcal {O}(E \sqrt {V})$}}{8}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.3}{Blossom matching $\mathcal {O}(E V^2)$}}{8}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.2.4}{Stable marriage}}{9}{}%
+\contentsline {subsection}{\tocsubsection {}{3.3}{Depth first searches}}{9}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.3.1}{Topological Sort $O(V+E)$}}{9}{}%
+\contentsline {subsection}{\tocsubsection {}{3.4}{Cycle Detection $\mathcal {O}(V + E)$}}{9}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.4.1}{Cut Points and Bridges $O(V+E)$}}{9}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.4.2}{Strongly Connected Components $\mathcal {O}(V + E)$}}{9}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.4.3}{2-SAT $\mathcal {O}(V+E)$}}{10}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.4.4}{Dominator graph}}{10}{}%
+\contentsline {subsection}{\tocsubsection {}{3.5}{Min Cut / Max Flow}}{10}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.5.1}{Dinic's Algorithm $\mathcal {O}(V^{2} E)$}}{10}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.5.2}{Min-cost max-flow $O(n^2 m^2)$}}{10}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.5.3}{Gomory-Hu Tree - All Pairs Maximum Flow}}{11}{}%
+\contentsline {subsection}{\tocsubsection {}{3.6}{Minimal Spanning Tree $\mathcal {O}(E \log V)$}}{11}{}%
+\contentsline {subsection}{\tocsubsection {}{3.7}{Euler Path $O(V+E)$ hopefully}}{11}{}%
+\contentsline {subsection}{\tocsubsection {}{3.8}{Heavy-Light Decomposition}}{12}{}%
+\contentsline {subsection}{\tocsubsection {}{3.9}{Centroid Decomposition}}{12}{}%
+\contentsline {subsection}{\tocsubsection {}{3.10}{Least Common Ancestors, Binary Jumping}}{12}{}%
+\contentsline {subsection}{\tocsubsection {}{3.11}{Miscellaneous}}{12}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.11.1}{Misra-Gries $D+1$-edge coloring}}{12}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.11.2}{Minimum Mean Weight Cycle}}{13}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.11.3}{Minimum Arborescence}}{13}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.11.4}{Maximum Density Subgraph}}{13}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.11.5}{Maximum-Weight Closure}}{13}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.11.6}{Maximum Weighted Independent Set in a Bipartite Graph}}{13}{}%
+\contentsline {subsubsection}{\tocsubsubsection {}{3.11.7}{Synchronizing word problem}}{13}{}%
+\contentsline {section}{\tocsection {}{4}{String algorithms}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{Trie}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{Z-algorithm $\mathcal {O}(n)$}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{Manacher algorithm $\mathcal {O}(n)$}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{4.4}{Suffix array $\mathcal {O}(n \log {n})$}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{4.5}{Levenshtein Distance $\mathcal {O}(n^{2})$}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{4.6}{Knuth-Morris-Pratt algorithm $\mathcal {O}(N + M)$}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{4.7}{Aho-Corasick Algorithm $\mathcal {O}(N + \DOTSB \sum@ \slimits@ _{i=1}^{m} |S_i|)$}}{14}{}%
+\contentsline {subsection}{\tocsubsection {}{4.8}{eerTree}}{15}{}%
+\contentsline {subsection}{\tocsubsection {}{4.9}{Suffix Tree}}{15}{}%
+\contentsline {subsection}{\tocsubsection {}{4.10}{Suffix Automaton}}{15}{}%
+\contentsline {subsection}{\tocsubsection {}{4.11}{Hashing}}{16}{}%
+\contentsline {section}{\tocsection {}{5}{Geometry}}{16}{}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Convex Hull $\mathcal {O}(n \log n)$}}{17}{}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{Closest points $\mathcal {O}(n \log n)$}}{17}{}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{Great-Circle Distance}}{17}{}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{Delaunay triangulation}}{17}{}%
+\contentsline {subsection}{\tocsubsection {}{5.5}{3D Primitives}}{18}{}%
+\contentsline {subsection}{\tocsubsection {}{5.6}{Polygon Centroid}}{19}{}%
+\contentsline {subsection}{\tocsubsection {}{5.7}{Rectilinear Minimum Spanning Tree}}{19}{}%
+\contentsline {subsection}{\tocsubsection {}{5.8}{Points and lines (CP3)}}{19}{}%
+\contentsline {subsection}{\tocsubsection {}{5.9}{Polygon (CP3)}}{19}{}%
+\contentsline {subsection}{\tocsubsection {}{5.10}{Triangle (CP3)}}{20}{}%
+\contentsline {subsection}{\tocsubsection {}{5.11}{Circle (CP3)}}{20}{}%
+\contentsline {subsection}{\tocsubsection {}{5.12}{Formulas}}{21}{}%
+\contentsline {section}{\tocsection {}{6}{Miscellaneous}}{21}{}%
+\contentsline {subsection}{\tocsubsection {}{6.1}{Fast Fourier Transform $\mathcal {O}(n \log n)$}}{21}{}%
+\contentsline {subsection}{\tocsubsection {}{6.2}{Minimum Assignment (Hungarian Algorithm) $\mathcal {O}(n^{3})$}}{21}{}%
+\contentsline {subsection}{\tocsubsection {}{6.3}{Partial linear equation solver $\mathcal {O}(N^3)$}}{21}{}%
+\contentsline {subsection}{\tocsubsection {}{6.4}{Cycle-Finding}}{22}{}%
+\contentsline {subsection}{\tocsubsection {}{6.5}{Longest Increasing Subsequence}}{22}{}%
+\contentsline {subsection}{\tocsubsection {}{6.6}{Dates}}{22}{}%
+\contentsline {subsection}{\tocsubsection {}{6.7}{Simplex}}{22}{}%
+\contentsline {section}{\tocsection {}{7}{Combinatorics}}{22}{}%
+\contentsline {section}{\tocsection {}{8}{Formulas}}{23}{}%
+\contentsline {section}{\tocsection {}{9}{Game Theory}}{23}{}%
+\contentsline {section}{\tocsection {}{10}{Scheduling Theory}}{23}{}%
+\contentsline {section}{\tocsection {}{11}{Debugging Tips}}{24}{}%
+\contentsline {subsection}{\tocsubsection {}{11.1}{Dynamic programming optimizations}}{24}{}%
+\contentsline {subsection}{\tocsubsection {}{11.2}{Solution Ideas}}{24}{}%
+\contentsline {section}{\tocsection {}{}{Practice Contest Checklist}}{25}{}%

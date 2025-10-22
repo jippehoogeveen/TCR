@@ -2,7 +2,7 @@ struct BIT {
 	int n; vi A;
 	BIT(int _n) : n(_n), A(_n+1, 0) {}
 	BIT(vi &v) : n(sz(v)), A(1) {
-		for (auto x:v) A.pb(x);
+		for (ll x:v) A.pb(x);
 		for (int i=1, j; j=i&-i, i<=n; i++)
 			if (i+j <= n) A[i+j] += A[i];
 	}

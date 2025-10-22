@@ -1,0 +1,25 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{min\PYGZus{}stack}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{stack}\PYG{o}{\PYGZlt{}}\PYG{k+kt}{int}\PYG{o}{\PYGZgt{}}\PYG{+w}{ }\PYG{n}{S}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{M}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{push}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{n}{S}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}
+\PYG{+w}{    }\PYG{n}{M}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{M}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{?}\PYG{+w}{ }\PYG{n}{x}\PYG{+w}{ }\PYG{o}{:}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{M}\PYG{p}{.}\PYG{n}{top}\PYG{p}{(),}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{));}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{top}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{S}\PYG{p}{.}\PYG{n}{top}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{mn}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{M}\PYG{p}{.}\PYG{n}{top}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{pop}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{S}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}\PYG{+w}{ }\PYG{n}{M}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{empty}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{S}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}\PYG{+w}{ }\PYG{p}{\PYGZcb{};}
+\PYG{k}{struct}\PYG{+w}{ }\PYG{n+nc}{min\PYGZus{}queue}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{  }\PYG{n}{min\PYGZus{}stack}\PYG{+w}{ }\PYG{n}{inp}\PYG{p}{,}\PYG{+w}{ }\PYG{n}{outp}\PYG{p}{;}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{push}\PYG{p}{(}\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n}{x}\PYG{p}{)}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{inp}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{x}\PYG{p}{);}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{fix}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{outp}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{())}\PYG{+w}{ }\PYG{k}{while}\PYG{+w}{ }\PYG{p}{(}\PYG{o}{!}\PYG{n}{inp}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{())}
+\PYG{+w}{      }\PYG{n}{outp}\PYG{p}{.}\PYG{n}{push}\PYG{p}{(}\PYG{n}{inp}\PYG{p}{.}\PYG{n}{top}\PYG{p}{()),}\PYG{+w}{ }\PYG{n}{inp}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{top}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{fix}\PYG{p}{();}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{outp}\PYG{p}{.}\PYG{n}{top}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{int}\PYG{+w}{ }\PYG{n+nf}{mn}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{inp}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{())}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{outp}\PYG{p}{.}\PYG{n}{mn}\PYG{p}{();}
+\PYG{+w}{    }\PYG{k}{if}\PYG{+w}{ }\PYG{p}{(}\PYG{n}{outp}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{())}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{inp}\PYG{p}{.}\PYG{n}{mn}\PYG{p}{();}
+\PYG{+w}{    }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{min}\PYG{p}{(}\PYG{n}{inp}\PYG{p}{.}\PYG{n}{mn}\PYG{p}{(),}\PYG{+w}{ }\PYG{n}{outp}\PYG{p}{.}\PYG{n}{mn}\PYG{p}{());}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{void}\PYG{+w}{ }\PYG{n+nf}{pop}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{n}{fix}\PYG{p}{();}\PYG{+w}{ }\PYG{n}{outp}\PYG{p}{.}\PYG{n}{pop}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{+w}{  }\PYG{k+kt}{bool}\PYG{+w}{ }\PYG{n+nf}{empty}\PYG{p}{()}\PYG{+w}{ }\PYG{p}{\PYGZob{}}\PYG{+w}{ }\PYG{k}{return}\PYG{+w}{ }\PYG{n}{inp}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{()}\PYG{+w}{ }\PYG{o}{\PYGZam{}\PYGZam{}}\PYG{+w}{ }\PYG{n}{outp}\PYG{p}{.}\PYG{n}{empty}\PYG{p}{();}\PYG{+w}{ }\PYG{p}{\PYGZcb{}}
+\PYG{p}{\PYGZcb{};}
+\end{MintedVerbatim}
