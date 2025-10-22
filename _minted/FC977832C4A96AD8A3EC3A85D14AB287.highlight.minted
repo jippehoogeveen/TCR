@@ -1,4 +1,0 @@
-\begin{MintedVerbatim}[commandchars=\\\{\}]
-\PYG{c+c1}{\PYGZsh{} Last 6 chars of hash should match; var names matter}
-gcc\PYG{+w}{ }\PYGZhy{}E\PYG{+w}{ }\PYGZhy{}P\PYG{+w}{ }\PYGZhy{}w\PYG{+w}{ }\PYGZhy{}nostdinc\PYG{+w}{ }file.cpp\PYG{+w}{  }\PYG{p}{|}\PYG{+w}{ }tr\PYG{+w}{ }\PYGZhy{}d\PYG{+w}{ }\PYG{l+s+s1}{\PYGZsq{}[:space:]\PYGZsq{}}\PYG{+w}{ }\PYG{p}{|}\PYG{+w}{ }md5sum
-\end{MintedVerbatim}
