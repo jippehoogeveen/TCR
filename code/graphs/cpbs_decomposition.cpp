@@ -4,7 +4,8 @@ struct bicomp {
 	vii bs; int curnum;
 
 	void dfs(int u, int p) {
-		block.pb(u); low[u] = num[u] = curnum++;
+		block.pb(u);
+		low[u] = num[u] = curnum++;
 		int cnt = 0; bool found = false;
 		for(int v : adj[u]) {
 			if (num[v] == -1) {
@@ -14,11 +15,12 @@ struct bicomp {
 				found = found || low[v] >= num[u];
 				if (low[v] > num[u]) bs.eb(u, v);
 				if(low[v] >= num[u]) {
-					vi b2; while(true) {
+					vi b2;
+					while(true) {
 						int cur = block.back(); block.pop_back();
-						b2.pb(cur); if(cur == v) break; }
-					if(low[v] == num[u]) {
-						b2.pb(u); blocks.pb(b2); }
+						b2.pb(cur); if(cur == v) break;
+					} b2.pb(u);
+					if(low[v] == num[u]) blocks.pb(b2);//excludes bridges
 				}
 			} else if (p != v) low[u] = min(low[u], num[v]);
 		}
@@ -35,16 +37,13 @@ struct bicomp {
 		for(ii p : bs) bsset.emplace(ii(min(p.x,p.y), max(p.x,p.y)));
 		iscut = vb(n, false);
 		for(ll x : cp) iscut[x] = true;
-		REP(i, n) iscut[i] = iscut[i] || (sz(adj[i]) <= 1);
+		REP(i, n) if(sz(adj[i]) <= 1) iscut[i] = true;
 		blockadj = vvi(n + sz(blocks));
 		REP(i, sz(blocks)) for(ll x : blocks[i])
 			if(iscut[x]) addedge(i + n, x);
 		for(ii p : bs) addedge(p.x, p.y); }
 
 	vector<map<ll,vi>> inblockedge; vi wblock;
-	void edgeinblock(ll b, ll u, ll v) {
-		if(inblockedge[b].count(u) == 0) inblockedge[b].emplace(u, vi());
-		inblockedge[b][u].pb(v); }
 	void dfsbe(ll i, ll p) {
 		for(ll j : blockadj[i])
 			if(j != p && (i >= n || j >= n)) dfsbe(j, i);
@@ -54,13 +53,16 @@ struct bicomp {
 				if(j < n && j != p)
 					for(ll k : adj[j])
 						if(bsset.count(ii(min(j, k), max(j, k))) == 0)
-							edgeinblock(wblock[k], j, k);
+							inblockedge[wblock[k]][j].pb(k);
 		} }
 	void makeblockedges() {
 		inblockedge = vector<map<ll,vi>>(sz(blocks));
+		REP(i, sz(blocks)) for(ll j : blocks[i]) inblockedge[i].emplace(j, vi());
 		wblock = vi(n, -1);
 		REP(i, sz(blocks)) {
 			if (wblock[blocks[i][0]] == -1) dfsbe(i + n, -1);
-			for(ll j : blocks[i]) if(!iscut[j])
-					for(ll k : adj[j]) edgeinblock(i, j, k); }
+			for(ll j : blocks[i])
+				if(!iscut[j])
+					for(ll k : adj[j])
+						inblockedge[i][j].pb(k); }
 	} };
